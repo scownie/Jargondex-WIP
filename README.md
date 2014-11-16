@@ -11,17 +11,17 @@ To-do (lots):
 <LI> Extract all links within that subdomain/path, save list in separate file for each Company object
 <LI> Find a way to feed these into Scraper.java
 
-- <b> Encapsulate methods in Scraper.java </b>
-- Add conditional statements based on whether Company.getCssClassOrID returns "class" or "ID"
-- i.e either doc.getElementsByClass OR doc.getElementsByID
+<b> Encapsulate methods in Scraper.java </b>
+<LI> Add conditional statements based on whether Company.getCssClassOrID returns "class" or "ID"
+<LI> i.e either doc.getElementsByClass OR doc.getElementsByID
 
-- <b> Move Companies ArrayList to separate class </b>
-- Add getters and setters for Companies ArrayList
-- Figure out how to access/update Companies from Scraper.java
+<b> Move Companies ArrayList to separate class </b>
+<LI> Add getters and setters for Companies ArrayList
+<LI> Figure out how to access/update Companies from Scraper.java
 
-- <b> Start working on compare/rank algorithm </b>
-- Use countOccurences as a starter (https://github.com/scownie/JavaWorksheets/blob/master/src/Ex2.java)
-- Test it out with Jargone wordlist (https://github.com/rooreynolds/jargone/blob/master/jargonlist.txt)
+<b> Start working on compare/rank algorithm </b>
+<LI> Use countOccurences as a starter (https://github.com/scownie/JavaWorksheets/blob/master/src/Ex2.java)
+<LI> Test it out with Jargone wordlist (https://github.com/rooreynolds/jargone/blob/master/jargonlist.txt)
 
-- <b> Start gathering tech jargon list </b>
-- Replace Jargone wordlist with new list when ready
+<b> Start gathering tech jargon list </b>
+<LI> Replace Jargone wordlist with new list when ready
