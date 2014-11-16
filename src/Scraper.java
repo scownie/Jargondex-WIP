@@ -12,7 +12,7 @@ import java.io.FileWriter;
 
 public class Scraper {
 
-	private static ArrayList<Company> Companies = new ArrayList<Company>();
+	public static ArrayList<Company> Companies = new ArrayList<Company>();
 
 	/**
 	 * Prints all text from the baseURL of EVERY COMPANY in the ArrayList 
@@ -21,7 +21,7 @@ public class Scraper {
 	 * @return null - method prints text from within the loop
 	 */
 
-	public static String printAllByClass(ArrayList<Company> Companies) {
+	public String printAllByClass(ArrayList<Company> Companies) {
 
 		for (Company comp : Companies) {
 			String URL = comp.getBaseURL();
@@ -107,13 +107,15 @@ public class Scraper {
 			e1.printStackTrace();
 		}
 		return null;
+		
 	}
 /**
  * Prints only the links that contain part of the path specified in that Company object's BaseURL
- * ONLY WORKING FOR APPLE 
+ * CURRENTLY ONLY WORKS FOR APPLE 
  * @param name of Company object from which to extract links
  * @return null - method prints links from within the loop
  */
+	
 	public static String printCertainUrls(Company companyName) {
 		Document doc;
 		String URL = companyName.getBaseURL();
@@ -183,7 +185,7 @@ public class Scraper {
 
 		//System.out.println(printAllByClass(Companies));
 		//System.out.println(printSelectedByClass(Apple));
-		System.out.println(printUrlsFromSelected(Apple));
+		System.out.println(printCertainUrls(Apple));
 
 		
 

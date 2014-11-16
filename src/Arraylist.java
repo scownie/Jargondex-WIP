@@ -3,9 +3,9 @@ import java.util.Iterator;
 
 public class Arraylist {
 
-	private static ArrayList<Company> Companies = new ArrayList<Company>();
+	public static ArrayList<Company> Companies = new ArrayList<Company>();
 	
-	public static ArrayList<Company> getCompanies() {
+	public ArrayList<Company> getCompanies() {
 		return Companies;
 	}
 
