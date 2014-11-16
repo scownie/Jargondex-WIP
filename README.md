@@ -1,7 +1,7 @@
-Jargondex - WIP
+Jargondex
 =============
 
-Crawls tech companies' news pages, pulls press releases using CSS selectors (via JSoup), and compares the parsed content to a list of predefined jargon words. 
+Crawls tech companies' news pages, pulls press releases using CSS selectors (via JSoup), and compares the parsed content to a list of predefined jargon words.  
 
 <h2> <b> To-do (lots): </b> </h2>
 
