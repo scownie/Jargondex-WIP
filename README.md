@@ -12,21 +12,21 @@ To-do (lots):
 <LI> Find a way to feed these into Scraper.java
 </UL>
 
-<b> Encapsulate methods in Scraper.java </b>
+<b> Encapsulate methods in Scraper.java </b> <UL>
 <LI> Add conditional statements based on whether Company.getCssClassOrID returns "class" or "ID"
 <LI> i.e either doc.getElementsByClass OR doc.getElementsByID
 </UL>
 
-<b> Move Companies ArrayList to separate class </b>
+<b> Move Companies ArrayList to separate class </b> <UL>
 <LI> Add getters and setters for Companies ArrayList
 <LI> Figure out how to access/update Companies from Scraper.java
 </UL>
 
-<b> Start working on compare/rank algorithm </b>
+<b> Start working on compare/rank algorithm </b> <UL>
 <LI> Use countOccurences as a starter (https://github.com/scownie/JavaWorksheets/blob/master/src/Ex2.java)
 <LI> Test it out with Jargone wordlist (https://github.com/rooreynolds/jargone/blob/master/jargonlist.txt)
 </UL>
 
-<b> Start gathering tech jargon list </b>
+<b> Start gathering tech jargon list </b> <UL>
 <LI> Replace Jargone wordlist with new list when ready
 </UL>
