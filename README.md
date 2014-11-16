@@ -3,7 +3,7 @@ Jargondex - WIP
 
 Crawls tech companies' news pages, pulls press releases using CSS selectors (via JSoup), and compares the parsed content to a list of predefined jargon words. 
 
-To-do (lots):
+<h2> <b> To-do (lots): </b> </h2>
 
 <b> Get crawler4j working </b> <UL>
 <LI> Use Company.getBaseURL as starting point for crawl, e.g. http://www.samsung.com/uk/news/local/
