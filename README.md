@@ -5,11 +5,11 @@ Crawls tech companies' news pages, pulls press releases using CSS selectors (via
 
 To-do (lots):
 
-- <b> Get crawler4j working </b>
-- Use Company.getBaseURL as starting point for crawl, e.g. http://www.samsung.com/uk/news/local/
-- Test MaxDepth... 1/2?
-- Extract all links within that subdomain/path, save list in separate file for each Company object
-- Find a way to feed these into Scraper.java
+<b> Get crawler4j working </b> <UL>
+<LI> Use Company.getBaseURL as starting point for crawl, e.g. http://www.samsung.com/uk/news/local/
+<LI> Test MaxDepth... 1/2?
+<LI> Extract all links within that subdomain/path, save list in separate file for each Company object
+<LI> Find a way to feed these into Scraper.java
 
 - <b> Encapsulate methods in Scraper.java </b>
 - Add conditional statements based on whether Company.getCssClassOrID returns "class" or "ID"
