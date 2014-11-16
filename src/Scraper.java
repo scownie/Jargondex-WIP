@@ -1,4 +1,3 @@
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -10,13 +9,129 @@ import org.jsoup.select.Elements;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
-import java.io.IOException;
-
 
 public class Scraper {
 
 	private static ArrayList<Company> Companies = new ArrayList<Company>();
 
+	/**
+	 * Prints all text from the baseURL of EVERY COMPANY in the ArrayList 
+	 * Only prints text that satisfies the CSS selector specified in each Company object
+	 * @param Companies - ArrayList of Company objects
+	 * @return null - method prints text from within the loop
+	 */
+
+	public static String printAllByClass(ArrayList<Company> Companies) {
+
+		for (Company comp : Companies) {
+			String URL = comp.getBaseURL();
+			Document doc;
+			try {
+				doc = Jsoup.connect(URL).get();
+				Elements content = doc.getElementsByClass(comp.getCssSelector());
+				for (Element e : content) {
+					System.out.println(comp.getCompanyName() + e.text());
+				}
+			}
+
+			catch (IOException e1) {
+				e1.printStackTrace();
+			}
+		}
+		return null;
+
+	} 		
+
+	/**
+	 * Prints all text from the baseURL of the named company 
+	 * As above, only prints the text that satisfies the CSS selector specified in its object
+	 * @param companyName - name of Company object from which to extract text
+	 * @return null - method prints text from within the loop
+	 */
+
+	public static String printSelectedByClass(Company companyName) {
+		Document doc;
+		String URL = companyName.getBaseURL();
+		try {
+			doc = Jsoup.connect(URL).get();
+			Elements content = doc.getElementsByClass(companyName.getCssSelector());
+			for (Element e : content) {
+				System.out.println(companyName.getCompanyName() + " " + e.text());
+			}
+
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+		return null;
+	}
+
+	/**
+	 * Prints anything contained in "p" tags text from the baseURL of the named company 
+	 * @param companyName - name of Company object from which to extract text
+	 * @return null - method prints text from within the loop
+	 */
+
+	public static String printPFromSelected(Company companyName) {
+		Document doc;
+		String URL = companyName.getBaseURL();
+		try {
+			doc = Jsoup.connect(URL).get();
+			Elements content = doc.getElementsByTag("p");
+			for (Element e : content) {
+				System.out.println(companyName.getCompanyName() + " " + e.text());
+			}
+
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+		return null;
+	}
+
+	/**
+	 * Prints all links from the baseURL of the named company 
+	 * @param companyName - name of Company object from which to extract links
+	 * @return null - method prints links from within the loop
+	 */
+
+	public static String printUrlsFromSelected(Company companyName) {
+		Document doc;
+		String URL = companyName.getBaseURL();
+		try {
+			doc = Jsoup.connect(URL).get();
+			Elements links = doc.getElementsByTag("a");
+			for (Element link : links) {
+				String linkHref = link.attr("href");
+				System.out.println(companyName.getCompanyName() + " " + linkHref);
+			}
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+		return null;
+	}
+/**
+ * Prints only the links that contain part of the path specified in that Company object's BaseURL
+ * ONLY WORKING FOR APPLE 
+ * @param name of Company object from which to extract links
+ * @return null - method prints links from within the loop
+ */
+	public static String printCertainUrls(Company companyName) {
+		Document doc;
+		String URL = companyName.getBaseURL();
+		try {
+			doc = Jsoup.connect(URL).get();
+			Elements links = doc.getElementsByTag("a");
+			for (Element link : links) {
+				String linkHref = link.attr("href");
+				if (linkHref.startsWith("/uk/pr/library/")) {
+					System.out.println(companyName.getCompanyName() + " " + linkHref);
+				}
+			}
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+		return null;
+	}
+	
 	public static void main(String[] args) throws IOException {
 
 		Company Samsung = new Company("Samsung", "class", "news_wrap", "http://www.samsung.com/uk/news/local/");
@@ -47,13 +162,13 @@ public class Scraper {
 		Companies.add(Intel);	
 		Company Oracle = new Company("Oracle", "class", "news-details-body", "https://emeapressoffice.oracle.com/Press-Releases/");
 		Companies.add(Oracle);
-		Company SAP = new Company("SAP", "class", "article", "http://www.news-sap.com/topics/press-release/");
+		Company SAP = new Company("SAP", "class", "article", "http://www.news-sap.com/topics/press-release");
 		Companies.add(SAP);
 		Company Symantec = new Company("Symantec", "class", "bckPadMedium", "http://www.symantec.com/en/uk/about/news/release/");
 		Companies.add(Symantec);
 		Company VMWare = new Company("VMWare", "class", "mw_release", "http://www.vmware.com/uk/company/news/releases/");
 		Companies.add(VMWare);
-		Company CATechnologies = new Company("CATechnologies", "class", "container", "http://www.ca.com/sg/news/press-releases/");
+		Company CATechnologies = new Company("CATechnologies", "class", "container", "http://www.ca.com/sg/news/press-releases.aspx");
 		Companies.add(CATechnologies);
 		Company Intuit = new Company("Intuit", "id", "pressRelease", "http://about.intuit.com/about_intuit/press_room/");
 		Companies.add(Intuit);
@@ -65,24 +180,18 @@ public class Scraper {
 		Companies.add(Siemens);
 		Company EMC = new Company("EMC", "class", "news-wrapper", "http://uk.emc.com/about/news/press/");
 		Companies.add(EMC);
-		
-		
-		
-		// This gets text based on CSS selector defined for one particular Company in Companies ArrayList
 
-		String contenttoPrint = null;
+		//System.out.println(printAllByClass(Companies));
+		//System.out.println(printSelectedByClass(Apple));
+		System.out.println(printUrlsFromSelected(Apple));
 
-		// This gets text based on CSS selector defined for each Company in Companies ArrayList
-		//for (Company comp : Companies) {
-		//String URL = comp.getBaseURL();
-		Document doc = Jsoup.connect(Microsoft.getBaseURL()).get();
-		Elements content = doc.getElementsByTag("p");
-		for (Element e : content) {
-			contenttoPrint = e.text();
-		}
+		
 
+/**
 		//BufferedReader & FileReader to print stuff out
-
+		
+		String contenttoPrint = null;
+		
 		try {
 
 			String content2 = contenttoPrint;
@@ -104,43 +213,15 @@ public class Scraper {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-
-		/**
-		Document doc = Jsoup.connect(Companies.get(Companies.indexOf(Intel)).getBaseURL()).get();
-		Elements content = doc.getElementsByClass("jive-content-body");
-
-		for (Element e : content) {
-			System.out.println(e.text());
-		}
-
-
-
-		//This gets all text with a "p" tag
-		for (Company comp: Companies) {
-			String URL = comp.getBaseURL();
-			Document doc = Jsoup.connect(URL).get();
-			Elements text = doc.getElementsByTag("p");
-			for (Element e : text) {
-				System.out.println(comp.getCompanyName() + " " + e.text());
-			}
-		}
-
-
-
-	// This gets all links from the baseURL of each Company in the Companies ArrayList
-
-	 	for (Company comp : Companies) {
-			String URL = comp.getBaseURL();
-			Document doc2 = Jsoup.connect(URL).get();
-			Elements links = doc2.getElementsByTag("a");
-				for (Element link : links) {
-					String linkHref = link.attr("href");
-					System.out.println(comp.getCompanyName() + " " + linkHref);
-				}
-		}
-		 */
+		
+	*/
 	}
+	
 }
+
+
+
+
 
 
 
