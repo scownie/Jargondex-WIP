@@ -5,7 +5,7 @@ Crawls tech companies' news pages, pulls press releases using CSS selectors (via
 
 To-do (lots):
 
-- Get crawler4j working
+- <b> Get crawler4j working </b>
 --> Use Company.getBaseURL as starting point for crawl, e.g. http://www.samsung.com/uk/news/local/
 --> Test MaxDepth... 1/2?
 --> Extract all links within that subdomain/path, save list in separate file for each Company object
