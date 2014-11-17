@@ -6,12 +6,14 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileReader;
 import java.io.FileWriter;
 
 public class Scraper {
-
+	
 	public static ArrayList<Company> Companies = new ArrayList<Company>();
 
 	/**
@@ -20,7 +22,6 @@ public class Scraper {
 	 * @param Companies - ArrayList of Company objects (in main method below)
 	 * @return null - method prints text from within the loop
 	 */
-
 	public void printAllByClass(ArrayList<Company> Companies) {
 
 		for (Company comp : Companies) {
@@ -45,8 +46,7 @@ public class Scraper {
 	 * @param companyName - name of Company object from which to extract text
 	 * @return null - method prints text from within the loop
 	 */
-
-	public static void printSelectedByClass(Company companyName) {
+	static void printSelectedByClass(Company companyName) {
 		Document doc;
 		String URL = companyName.getBaseURL();
 		try {
@@ -67,8 +67,7 @@ public class Scraper {
 	 * @param companyName - name of Company object from which to extract text
 	 * @return null - method prints text from within the loop
 	 */
-
-	public static void printPFromSelected(Company companyName) {
+	static void printPFromSelected(Company companyName) {
 		Document doc;
 		String URL = companyName.getBaseURL();
 		try {
@@ -88,8 +87,7 @@ public class Scraper {
 	 * @param companyName - name of Company object from which to extract links
 	 * @return null - method prints links from within the loop
 	 */
-
-	public static void printUrlsFromSelected(Company companyName) {
+	static void printUrlsFromSelected(Company companyName) {
 		Document doc;
 		String URL = companyName.getBaseURL();
 		try {
@@ -97,7 +95,7 @@ public class Scraper {
 			Elements links = doc.getElementsByTag("a");
 			for (Element link : links) {
 				String linkHref = link.attr("href");
-				System.out.println(companyName.getCompanyName() + " " + linkHref);
+				System.out.println(linkHref);
 			}
 		} catch (IOException e1) {
 			e1.printStackTrace();
@@ -109,8 +107,7 @@ public class Scraper {
 	 * @param name of Company object from which to extract links
 	 * @return null - method prints links from within the loop
 	 */
-	
-	public static void printCertainUrls(Company companyName) {
+	static void printCertainUrls(Company companyName) {
 		Document doc;
 		String URL = companyName.getBaseURL();
 		try {
@@ -134,8 +131,7 @@ public class Scraper {
 	 * @return null - method prints links from within the loop
 	 * @throws IOException 
 	 */
-
-	public static void printUrlsToFile(Company companyName) throws IOException {
+	static void printUrlsToFile(Company companyName) throws IOException {
 		Document doc;
 		String URL = companyName.getBaseURL();
 		String Name = companyName.getCompanyName();
@@ -151,71 +147,95 @@ public class Scraper {
 			for (Element link : links) {
 				String linkHref = link.attr("href");
 				if (linkHref.matches(companyName.getregEx())) {
-					bw.write(linkHref + "\n");
+					bw.write(companyName.getDomain() + linkHref + "\n");
 				}
 			}
 			bw.close();
-			System.out.println("Results printed to" + " " + file.getAbsoluteFile());
+			System.out.println("Printed to" + " " + file.getAbsoluteFile() + ", nice work m8!");
 		} catch (IOException e1) {
 			e1.printStackTrace();
 		}
 	}
-
+	
+	/**
+	 * Reads URLs from saved .txt file for each Company 
+	 * @param companyName
+	 */
+	static void readUrlsFromFile(Company companyName) {
+			try {
+				File file = new File("/Users/Steve/Workspace/ScraperTest/Filewriter/" + companyName.getCompanyName() + ".txt");
+				FileReader fileReader = new FileReader(file);
+				BufferedReader bufferedReader = new BufferedReader(fileReader);
+				StringBuffer stringBuffer = new StringBuffer();
+				String line;
+				while ((line = bufferedReader.readLine()) != null) {
+					stringBuffer.append(line);
+					stringBuffer.append("\n");
+				}
+				fileReader.close();
+				//System.out.println("Contents of file:");
+				System.out.println(stringBuffer.toString());
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+	
+	
 	public static void main(String[] args) throws IOException {
-
-		Company Samsung = new Company("Samsung", "class", "news_wrap", "http://www.samsung.com/uk/news/local/", "^.*\\/news\\/local\\/.*$");
+		
+		Company Samsung = new Company("Samsung", "class", "news_wrap", "http://www.samsung.com/uk/news/local/", "^.*\\/news\\/local\\/.*$", "http://www.samsung.com");
 		Companies.add(Samsung);
-		Company Apple = new Company("Apple", "class", "content", "https://www.apple.com/uk/pr/library/", "^.*\\/pr\\/library\\/[0-­9]{4}\\/.*");
+		Company Apple = new Company("Apple", "class", "content", "https://www.apple.com/uk/pr/library/", "^.*\\/pr\\/library\\/[0-­9]{4}\\/.*", "https://www.apple.com");
 		Companies.add(Apple);
-		Company HP = new Company("HP", "class", "article", "http://www8.hp.com/uk/en/hp-news/online-news.html", "^.*\\/en\\/hp-news\\/.*$");
+		Company HP = new Company("HP", "class", "article", "http://www8.hp.com/uk/en/hp-news/newsroom.html", "^.*\\/en\\/hp-news\\/.*$", "http://www8.hp.com/uk/en/hp-news/");
 		Companies.add(HP);
-		Company IBM = new Company("IBM", "class", "ibm-container-body", "https://www-03.ibm.com/press/uk/en/pressreleases/recent.wss", "^.*\\/en\\/pressrelease\\/.*$");
+		Company IBM = new Company("IBM", "class", "ibm-container-body", "https://www-03.ibm.com/press/uk/en/pressreleases/recent.wss", "^.*\\/en\\/pressrelease\\/.*$", "https://www-03.ibm.com");
 		Companies.add(IBM);
-		Company Microsoft = new Company("Microsoft", "class", "entry-content", "http://news.microsoft.com/category/press-releases/", "^.*\\/[0-­9]{4}\\/[0-9]{2}\\/[0-9]{2}\\/.*$");
+		Company Microsoft = new Company("Microsoft", "class", "entry-content", "http://news.microsoft.com/category/press-releases/", "^.*\\/[0-­9]{4}\\/[0-9]{2}\\/[0-9]{2}\\/.*$", "");
 		Companies.add(Microsoft);
-		Company Amazon = new Company("Amazon", "class", "ccbnNewsArticle", "http://phx.corporate-ir.net/phoenix.zhtml?c=251199&p=irol-news&nyo=0", "^.*newsArticle\\&ID\\=.*$");
+		Company Amazon = new Company("Amazon", "class", "ccbnNewsArticle", "http://phx.corporate-ir.net/phoenix.zhtml?c=251199&p=irol-news&nyo=0", "^.*newsArticle\\&ID\\=.*$", "http://phx.corporate-ir.net/");
 		Companies.add(Amazon);
 		// SONY NOT WORKING - can't parse JS elements 
 		//Company Sony = new Company("Sony", "class", "textParagraph", "http://www.sony.net/SonyInfo/News/Press/index.html", "^.*\\/News\\/Press\\/[0-9]{6}\\/.*$");
 		//Companies.add(Sony);
-		Company Panasonic = new Company("Panasonic", "class", "newsroom-article", "http://news.panasonic.co.uk/pressreleases", "^.*\\/pressreleases\\/.*$");
+		Company Panasonic = new Company("Panasonic", "class", "newsroom-article", "http://news.panasonic.co.uk/pressreleases", "^.*\\/pressreleases\\/.*$", "http://news.panasonic.co.uk");
 		Companies.add(Panasonic);
-		Company Google = new Company("Google", "class", "post-content", "http://www.googlepress.blogspot.co.uk/", "^.*\\/[0-­9]{4}\\/[0-9]{2}\\/.*$");
+		Company Google = new Company("Google", "class", "post-content", "http://www.googlepress.blogspot.co.uk/", "^.*\\/[0-­9]{4}\\/[0-9]{2}\\/.*$", "");
 		Companies.add(Google);
-		Company Dell = new Company("Dell", "class", "uif_maincontent", "http://www.dell.com/learn/uk/en/ukcorp1/viewall/newsroom-press-releases?page=2&pageSize=50", "^.*\\/ukcorp1\\/press-releases\\/.*$");
+		Company Dell = new Company("Dell", "class", "uif_maincontent", "http://www.dell.com/learn/uk/en/ukcorp1/viewall/newsroom-press-releases?page=2&pageSize=50", "^.*\\/ukcorp1\\/press-releases\\/.*$", "http://www.dell.com");
 		Companies.add(Dell);
-		Company Toshiba = new Company("Toshiba", "class", "pressReleaseText", "http://www.toshiba.co.uk/press/releases/", "^.*\\/press\\/releases\\/.*$");
+		Company Toshiba = new Company("Toshiba", "class", "pressReleaseText", "http://www.toshiba.co.uk/press/releases/", "^.*\\/press\\/releases\\/.*$", "");
 		Companies.add(Toshiba);
-		Company LG = new Company("LG", "class", "column2", "http://www.lg.com/uk/press-release/", "^.*\\/press-release\\/.*$");
+		Company LG = new Company("LG", "class", "column2", "http://www.lg.com/uk/press-release/", "^.*\\/press-release\\/.*$", "http://www.lg.com/uk/");
 		Companies.add(LG);
-		Company Intel = new Company("Intel", "class", "jive-content-body", "http://newsroom.intel.com/community/en_uk/blog/", "^.*\\/en_uk\\/blog\\/[0-­9]{4}\\/[0-9]{2}\\/.*$");
+		Company Intel = new Company("Intel", "class", "jive-content-body", "http://newsroom.intel.com/community/en_uk/blog/", "^.*\\/en_uk\\/blog\\/[0-­9]{4}\\/[0-9]{2}\\/.*$", "");
 		Companies.add(Intel);
-		Company Oracle = new Company("Oracle", "class", "news-details-body", "https://emeapressoffice.oracle.com/content/default.aspx?NewsAreaId=2", "^.*\\/Press-Releases\\/.*$");
+		Company Oracle = new Company("Oracle", "class", "news-details-body", "https://emeapressoffice.oracle.com/content/default.aspx?NewsAreaId=2", "^.*\\/Press-Releases\\/.*$", "https://emeapressoffice.oracle.com");
 		Companies.add(Oracle);
 		//Company SAP = new Company("SAP", "class", "article", "http://www.news-sap.com/topics/press-release");
 		//Companies.add(SAP);
-		Company Symantec = new Company("Symantec", "class", "bckPadMedium", "http://www.symantec.com/en/uk/about/news/release/", "^.*\\/news\\/release\\/.*$");
+		Company Symantec = new Company("Symantec", "class", "bckPadMedium", "http://www.symantec.com/en/uk/about/news/release/", "^.*\\/news\\/release\\/.*$", "http://www.symantec.com");
 		Companies.add(Symantec);
-		Company VMWare = new Company("VMWare", "class", "mw_release", "http://www.vmware.com/uk/company/news/releases/", "^.*\\/news\\/releases\\/.*$");
+		Company VMWare = new Company("VMWare", "class", "mw_release", "http://www.vmware.com/uk/company/news/releases/", "^.*\\/news\\/releases\\/.*$", "http://www.vmware.com");
 		Companies.add(VMWare);
-		Company CATechnologies = new Company("CATechnologies", "class", "container", "http://www.ca.com/sg/news/press-releases.aspx", "^.*\\/news\\/press-releases\\/.*$");
+		Company CATechnologies = new Company("CATechnologies", "class", "container", "http://www.ca.com/sg/news/press-releases.aspx", "^.*\\/news\\/press-releases\\/.*$", "http://www.ca.com");
 		Companies.add(CATechnologies);
 		//Company Intuit = new Company("Intuit", "id", "pressRelease", "http://about.intuit.com/about_intuit/press_room/");
 		//Companies.add(Intuit);
-		Company Salesforce = new Company("Salesforce", "class", "category", "http://www.salesforce.com/uk/company/news-press/press-releases/", "^.*\\/news-press\\/press-releases\\/.*$");
+		Company Salesforce = new Company("Salesforce", "class", "category", "http://www.salesforce.com/uk/company/news-press/press-releases/", "^.*\\/news-press\\/press-releases\\/.*$", "http://www.salesforce.com");
 		Companies.add(Salesforce);
-		Company Cisco = new Company("Cisco", "id", "releasecopy", "http://newsroom.cisco.com/pressreleases", "^.*\\/press-release-content\\?type\\=webcontent\\&articleId\\=.*$");
+		Company Cisco = new Company("Cisco", "id", "releasecopy", "http://newsroom.cisco.com/pressreleases", "^.*\\/press-release-content\\?type\\=webcontent\\&articleId\\=.*$", "");
 		Companies.add(Cisco);
-		Company Siemens = new Company("Siemens", "class", "left-content", "http://www.siemens.co.uk/en/news_press/press_releases/", "^.*\\/news_press\\/index\\/news_archive\\/[0-­9]{4}\\/.*$");
+		Company Siemens = new Company("Siemens", "class", "left-content", "http://www.siemens.co.uk/en/news_press/press_releases/", "^.*\\/news_press\\/index\\/news_archive\\/[0-­9]{4}\\/.*$", "http://www.siemens.co.uk/");
 		Companies.add(Siemens);
-		Company EMC = new Company("EMC", "class", "news-wrapper", "http://uk.emc.com/about/news/index.htm", "^.*\\/news\\/press\\/[0-­9]{4}\\/.*$");
+		Company EMC = new Company("EMC", "class", "news-wrapper", "http://uk.emc.com/about/news/index.htm", "^.*\\/news\\/press\\/[0-­9]{4}\\/.*$", "http://uk.emc.com");
 		Companies.add(EMC);
 		
 		//printUrlsFromSelected(Dell);
 		
-
-			printUrlsToFile(Oracle);
-	
+		//printUrlsToFile(Samsung);
+		 readUrlsFromFile(Panasonic);
+			
 		
 	}
 }

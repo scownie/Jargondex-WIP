@@ -5,15 +5,24 @@ public class Company {
 	private String cssSelector;
 	private String baseURL;
 	private String regEx;
-	
-	public Company(String companyName, String cssClassOrID, String cssSelector, String baseURL, String regEx) {
+	private String domain;
+
+	public Company(String companyName, String cssClassOrID, String cssSelector, String baseURL, String regEx, String domain) {
 		this.companyName = companyName;
 		this.cssClassOrID = cssClassOrID;
 		this.cssSelector = cssSelector;
 		this.baseURL = baseURL;
 		this.regEx = regEx;
+		this.domain = domain;
 	}
 	
+	public String getDomain() {
+		return domain;
+	}
+
+	public void setDomain(String domain) {
+		this.domain = domain;
+	}
 	public String getregEx() {
 		return regEx;
 	}
