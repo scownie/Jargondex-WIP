@@ -4,14 +4,24 @@ public class Company {
 	private String cssClassOrID;
 	private String cssSelector;
 	private String baseURL;
+	private String regEx;
 	
-	public Company(String companyName, String cssClassOrID, String cssSelector, String baseURL) {
+	public Company(String companyName, String cssClassOrID, String cssSelector, String baseURL, String regEx) {
 		this.companyName = companyName;
 		this.cssClassOrID = cssClassOrID;
 		this.cssSelector = cssSelector;
 		this.baseURL = baseURL;
+		this.regEx = regEx;
 	}
 	
+	public String getregEx() {
+		return regEx;
+	}
+
+	public void setregEx(String newregEx) {
+		this.regEx = newregEx;
+	}
+
 	public String getCompanyName() {
 		return companyName;
 	}
