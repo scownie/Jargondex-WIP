@@ -10,7 +10,7 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 
-public class Scraper {
+public class ScraperPrintTest {
 
 	public static ArrayList<Company> Companies = new ArrayList<Company>();
 
@@ -190,7 +190,7 @@ public class Scraper {
 		Companies.add(LG);
 		Company Intel = new Company("Intel", "class", "jive-content-body", "http://newsroom.intel.com/community/en_uk/blog/", "^.*\\/en_uk\\/blog\\/[0-­9]{4}\\/[0-9]{2}\\/.*$");
 		Companies.add(Intel);
-		Company Oracle = new Company("Oracle", "class", "news-details-body", "https://emeapressoffice.oracle.com/content/default.aspx?NewsAreaId=2", "^.*\\/Press-Releases\\/.*$");
+		Company Oracle = new Company("Oracle", "class", "news-details-body", "https://emeapressoffice.oracle.com/Press-Releases/", "^.*\\/Press-Releases\\/.*$");
 		Companies.add(Oracle);
 		//Company SAP = new Company("SAP", "class", "article", "http://www.news-sap.com/topics/press-release");
 		//Companies.add(SAP);
@@ -204,7 +204,7 @@ public class Scraper {
 		//Companies.add(Intuit);
 		Company Salesforce = new Company("Salesforce", "class", "category", "http://www.salesforce.com/uk/company/news-press/press-releases/", "^.*\\/news-press\\/press-releases\\/.*$");
 		Companies.add(Salesforce);
-		Company Cisco = new Company("Cisco", "id", "releasecopy", "http://newsroom.cisco.com/pressreleases", "^.*\\/press-release-content\\?type\\=webcontent\\&articleId\\=.*$");
+		Company Cisco = new Company("Cisco", "id", "releasecopy", "http://newsroom.cisco.com/press-release-content?", "^.*\\/press-release-content\\?type\\=webcontent\\&articleId\\=.*$");
 		Companies.add(Cisco);
 		Company Siemens = new Company("Siemens", "class", "left-content", "http://www.siemens.co.uk/en/news_press/press_releases/", "^.*\\/news_press\\/index\\/news_archive\\/[0-­9]{4}\\/.*$");
 		Companies.add(Siemens);
@@ -212,10 +212,7 @@ public class Scraper {
 		Companies.add(EMC);
 		
 		//printUrlsFromSelected(Dell);
-		
-
-			printUrlsToFile(Oracle);
-	
+		printUrlsToFile(Dell);
 		
 	}
 }
