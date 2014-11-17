@@ -113,6 +113,7 @@ public class Scraper {
 	 * @param name of Company object from which to extract links
 	 * @return null - method prints links from within the loop
 	 */
+	static String contenttoPrint;
 
 	public static void printCertainUrls(Company companyName) {
 		Document doc;
@@ -123,13 +124,14 @@ public class Scraper {
 			for (Element link : links) {
 				String linkHref = link.attr("href");
 				if (linkHref.matches(companyName.getregEx())) {
+					//contenttoPrint += linkHref + "\n"; // Remove comments to print to file
 					System.out.println(companyName.getCompanyName() + " " + linkHref);
 				}
 			}
 		} catch (IOException e1) {
 			e1.printStackTrace();
 		}
-		
+
 	}
 
 	public static void main(String[] args) throws IOException {
@@ -161,7 +163,9 @@ public class Scraper {
 		Companies.add(LG);
 		Company Intel = new Company("Intel", "class", "jive-content-body", "http://newsroom.intel.com/community/en_uk/blog/", "^.*\\/en_uk\\/blog\\/[0-­9]{4}\\/[0-9]{2}\\/.*$");
 		Companies.add(Intel);
+
 		/**
+		 * STILL TO ADD REGEX TO THESE
 		Company Oracle = new Company("Oracle", "class", "news-details-body", "https://emeapressoffice.oracle.com/Press-Releases/");
 		Companies.add(Oracle);
 		Company SAP = new Company("SAP", "class", "article", "http://www.news-sap.com/topics/press-release");
@@ -182,15 +186,12 @@ public class Scraper {
 		Companies.add(Siemens);
 		Company EMC = new Company("EMC", "class", "news-wrapper", "http://uk.emc.com/about/news/press/");
 		Companies.add(EMC);
-*/
-		printCertainUrls(Apple);
-		
-		/**
-		 * NOT WORKING YET
+		 */
+		printCertainUrls(Samsung);
+
+
 		//BufferedReader & FileReader to print stuff out
-
-		String contenttoPrint = null;
-
+/**
 		try {
 
 			String content2 = contenttoPrint;
@@ -212,11 +213,12 @@ public class Scraper {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-
-		 */
+*/
 	}
 
 }
+
+
 
 
 
