@@ -1,3 +1,15 @@
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
+
 
 public class Company {
 	private String companyName;
@@ -15,6 +27,179 @@ public class Company {
 		this.regEx = regEx;
 		this.domain = domain;
 	}
+	
+	/**
+	 * Prints all links from the baseURL of the named company 
+	 * @param companyName - name of Company object from which to extract links
+	 * @return null - method prints links from within the loop
+	 */
+	void printUrlsFromSelected() {
+		Document doc;
+		String url = this.getBaseURL();
+		try {
+			doc = Jsoup.connect(url).get();
+			Elements links = doc.getElementsByTag("a");
+			for (Element link : links) {
+				String linkHref = link.attr("href");
+				System.out.println(linkHref);
+			}
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+	}
+	
+	/**
+	 * Prints only the links that match the regex pattern defined in each Company object, prepends the domain where necessary
+	 * @param name of Company object from which to extract links
+	 * @return null - method prints links from within the loop
+	 * @throws IOException 
+	 */
+	void printUrlsToFile() throws IOException {
+		Document doc;
+		String url = this.getBaseURL();
+		String name = this.getCompanyName();
+		File file = new File("/Users/Steve/Workspace/ScraperTest/Filewriter/" + name + ".txt");
+		if (!file.exists()) {
+			file.createNewFile();
+		}
+		FileWriter fw = new FileWriter(file.getAbsoluteFile());
+		BufferedWriter bw = new BufferedWriter(fw);
+		try {
+			doc = Jsoup.connect(url).get();
+			Elements links = doc.getElementsByTag("a");
+			for (Element link : links) {
+				String linkHref = link.attr("href");
+				if (linkHref.matches(this.getregEx())) {
+					bw.write(this.getDomain() + linkHref + "\n");
+				}
+			}
+			bw.close();
+			System.out.println("Printed to" + " " + file.getAbsoluteFile() + ", nice work m8!");
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+	}
+	
+	/**
+	 * Prints only the links that match the regex pattern defined in each Company object
+	 * @param name of Company object from which to extract links
+	 * @return null - method prints links from within the loop
+	 */
+	void printCertainUrls() {
+		Document doc;
+		String url = this.getBaseURL();
+		String name = this.getCompanyName();
+		String regex = this.getregEx();
+		try {
+			doc = Jsoup.connect(url).get();
+			Elements links = doc.getElementsByTag("a");
+			for (Element link : links) {
+				String linkHref = link.attr("href");
+				if (linkHref.matches(regex)) {
+					System.out.println(name + " " + linkHref);
+				}
+			}
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+
+	}
+	
+	/**
+	 * Prints all links from the baseURL of the named company 
+	 * @param companyName - name of Company object from which to extract links
+	 * @return null - method prints links from within the loop
+	 */
+	void showUrls() {
+		Document doc;
+		String url = this.getBaseURL();
+		try {
+			doc = Jsoup.connect(url).get();
+			Elements links = doc.getElementsByTag("a");
+			for (Element link : links) {
+				String linkHref = link.attr("href");
+				System.out.println(linkHref);
+			}
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+	}
+	
+	/**
+	 * Prints anything contained in "p" tags text from the baseURL of the named company 
+	 * @param companyName - name of Company object from which to extract text
+	 * @return null - method prints text from within the loop
+	 */
+	void showAllText() {
+		Document doc;
+		String url = this.getBaseURL();
+		try {
+			doc = Jsoup.connect(url).get();
+			Elements content = doc.getElementsByTag("p");
+			for (Element e : content) {
+				System.out.println(this.getCompanyName() + " " + e.text());
+			}
+
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+	}
+	
+	/**
+	 * Reads URLs from saved .txt file for each Company, sends each line to saveContent 
+	 * @param companyName
+	 */
+	void readThenPrint() {
+		StringBuffer stringBuffer = null;	
+		String name = this.getCompanyName();
+		int counter = 0;
+		try {
+				File file = new File("/Users/Steve/Workspace/ScraperTest/Filewriter/" + name  + ".txt");
+				FileReader fileReader = new FileReader(file);
+				BufferedReader bufferedReader = new BufferedReader(fileReader);
+				stringBuffer = new StringBuffer();
+				String line;
+				while ((line = bufferedReader.readLine()) != null) {
+					this.saveContent(line.toString(), counter);
+					stringBuffer.append(line);
+					stringBuffer.append("\n");
+					counter++;
+				}
+				fileReader.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+	
+	private void saveContent(String currentURL, int counter) throws IOException {
+		Document doc;
+		String name = this.getCompanyName();
+		String css = this.getCssClassOrID();
+		File file = new File("/Users/Steve/Workspace/ScraperTest/Filewriter/" + name + "/" + name + "PRscrape" + counter + ".txt");
+		if (!file.exists()) { 
+			file.createNewFile();
+		}
+		FileWriter fw = new FileWriter(file.getAbsoluteFile());
+		BufferedWriter bw = new BufferedWriter(fw);
+		try {
+			doc = Jsoup.connect(currentURL).get();
+			if (css.equals("class")) {
+				Elements contentMatchingClass = doc.getElementsByClass(this.getCssSelector());
+				for (Element e : contentMatchingClass) {
+					bw.write(e.text() + "\n");
+				}
+			}
+			else { Element contentMatchingID = doc.getElementById(this.getCssSelector());
+			bw.write(contentMatchingID.text());
+			}
+		bw.close();
+		fw.close();
+		System.out.println("Printed to" + " " + file.getAbsoluteFile() + ", nice work m8!");
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+	}
+	
 	
 	public String getDomain() {
 		return domain;
@@ -63,9 +248,10 @@ public class Company {
 		this.baseURL = baseURL;
 	}
 
-
+	
 
 	public static void main(String[] args) {
+		
 		
 		
 	}

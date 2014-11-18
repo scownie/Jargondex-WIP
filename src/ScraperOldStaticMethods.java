@@ -12,7 +12,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 
-public class Scraper {
+public class ScraperOldStaticMethods {
 	
 	public static ArrayList<Company> Companies = new ArrayList<Company>();
 
@@ -22,6 +22,7 @@ public class Scraper {
 	 * @param Companies - ArrayList of Company objects (in main method below)
 	 * @return null - method prints text from within the loop
 	 */
+	
 	public void printAllByClass(ArrayList<Company> Companies) {
 
 		for (Company comp : Companies) {
@@ -46,7 +47,7 @@ public class Scraper {
 	 * @param companyName - name of Company object from which to extract text
 	 * @return null - method prints text from within the loop
 	 */
-	static void printSelectedByClass(Company companyName) {
+	void printSelectedByClass(Company companyName) {
 		Document doc;
 		String URL = companyName.getBaseURL();
 		try {
@@ -126,7 +127,7 @@ public class Scraper {
 	}
 
 	/**
-	 * Prints only the links that match the regex pattern defined in each Company object
+	 * Prints only the links that match the regex pattern defined in each Company object, prepends the domain where necessary
 	 * @param name of Company object from which to extract links
 	 * @return null - method prints links from within the loop
 	 * @throws IOException 
@@ -172,14 +173,12 @@ public class Scraper {
 				String line;
 				int counter = 0;
 				while ((line = bufferedReader.readLine()) != null) {
-					saveContent2(companyName, line.toString(), counter);
+					saveContent(companyName, line.toString(), counter);
 					stringBuffer.append(line);
 					stringBuffer.append("\n");
 					counter++;
 				}
 				fileReader.close();
-				//System.out.println("Contents of file:");
-				//System.out.println(stringBuffer.toString());
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
@@ -188,32 +187,9 @@ public class Scraper {
 	
 	static void saveContent(Company companyName, String currentURL, int counter) throws IOException {
 		Document doc;
-		String Name = companyName.getCompanyName();
-		File file = new File("/Users/Steve/Workspace/ScraperTest/Filewriter/" + Name + "/" + Name + "PRscrape" + counter + ".txt");
-		if (!file.exists()) { 
-			file.createNewFile();
-		}
-		FileWriter fw = new FileWriter(file.getAbsoluteFile());
-		BufferedWriter bw = new BufferedWriter(fw);
-		try {
-			doc = Jsoup.connect(currentURL).get();
-			Elements content = doc.getElementsByClass(companyName.getCssSelector());
-			for (Element e : content) {
-				bw.write(e.text() + "\n");
-			}
-		bw.close();
-		fw.close();
-		System.out.println("Printed to" + " " + file.getAbsoluteFile() + ", nice work m8!");
-		} catch (IOException e1) {
-			e1.printStackTrace();
-		}
-	}
-	
-	static void saveContent2(Company companyName, String currentURL, int counter) throws IOException {
-		Document doc;
-		String Name = companyName.getCompanyName();
+		String name = companyName.getCompanyName();
 		String CSS = companyName.getCssClassOrID();
-		File file = new File("/Users/Steve/Workspace/ScraperTest/Filewriter/" + Name + "/" + Name + "PRscrape" + counter + ".txt");
+		File file = new File("/Users/Steve/Workspace/ScraperTest/Filewriter/" + name + "/" + name + "PRscrape" + counter + ".txt");
 		if (!file.exists()) { 
 			file.createNewFile();
 		}
@@ -237,6 +213,7 @@ public class Scraper {
 			e1.printStackTrace();
 		}
 	}
+	
 	public static void main(String[] args) throws IOException {
 		
 		Company Samsung = new Company("Samsung", "class", "news_wrap", "http://www.samsung.com/uk/news/local/", "^.*\\/news\\/local\\/.*$", "http://www.samsung.com");
@@ -289,15 +266,9 @@ public class Scraper {
 		
 		//printUrlsFromSelected(Dell);
 		//printSelectedByClass(Google);
-		printUrlsToFile(EMC);
+		//printUrlsToFile(EMC);
 		//printCertainUrls(HP);
-		//readThenPrint(Toshiba);
-
-		//for (Company x : Companies){
-		//}
-		//(Samsung);
-		//System.out.println(readUrlsFromFile(Samsung));
-			
+		Toshiba.readThenPrint();;
 		
 	}
 }
