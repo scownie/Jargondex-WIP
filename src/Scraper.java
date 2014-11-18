@@ -61,7 +61,7 @@ public class Scraper {
 		}
 
 	}
-
+	
 	/**
 	 * Prints anything contained in "p" tags text from the baseURL of the named company 
 	 * @param companyName - name of Company object from which to extract text
@@ -158,28 +158,56 @@ public class Scraper {
 	}
 	
 	/**
-	 * Reads URLs from saved .txt file for each Company 
+	 * Reads URLs from saved .txt file for each Company, sends each line to saveContent 
 	 * @param companyName
 	 */
-	static void readUrlsFromFile(Company companyName) {
-			try {
-				File file = new File("/Users/Steve/Workspace/ScraperTest/Filewriter/" + companyName.getCompanyName() + ".txt");
+	static String readThenPrint(Company companyName) {
+		StringBuffer stringBuffer = null;	
+		String name = companyName.getCompanyName();
+		try {
+				File file = new File("/Users/Steve/Workspace/ScraperTest/Filewriter/" + name  + ".txt");
 				FileReader fileReader = new FileReader(file);
 				BufferedReader bufferedReader = new BufferedReader(fileReader);
-				StringBuffer stringBuffer = new StringBuffer();
+				stringBuffer = new StringBuffer();
 				String line;
+				int counter = 0;
 				while ((line = bufferedReader.readLine()) != null) {
+					saveContent(companyName, line.toString(), counter);
 					stringBuffer.append(line);
 					stringBuffer.append("\n");
+					counter++;
 				}
 				fileReader.close();
 				//System.out.println("Contents of file:");
-				System.out.println(stringBuffer.toString());
+				//System.out.println(stringBuffer.toString());
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
+			return stringBuffer.toString();
 		}
 	
+	static void saveContent(Company companyName, String currentURL, int counter) throws IOException {
+		Document doc;
+		String Name = companyName.getCompanyName();
+		File file = new File("/Users/Steve/Workspace/ScraperTest/Filewriter/" + Name + "/" + Name + "PRscrape" + counter + ".txt");
+		if (!file.exists()) { 
+			file.createNewFile();
+		}
+		FileWriter fw = new FileWriter(file.getAbsoluteFile());
+		BufferedWriter bw = new BufferedWriter(fw);
+		try {
+			doc = Jsoup.connect(currentURL).get();
+			Elements content = doc.getElementsByClass(companyName.getCssSelector());
+			for (Element e : content) {
+				bw.write(e.text() + "\n");
+			}
+		bw.close();
+		fw.close();
+		System.out.println("Printed to" + " " + file.getAbsoluteFile() + ", nice work m8!");
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+	}
 	
 	public static void main(String[] args) throws IOException {
 		
@@ -200,7 +228,7 @@ public class Scraper {
 		//Companies.add(Sony);
 		Company Panasonic = new Company("Panasonic", "class", "newsroom-article", "http://news.panasonic.co.uk/pressreleases", "^.*\\/pressreleases\\/.*$", "http://news.panasonic.co.uk");
 		Companies.add(Panasonic);
-		Company Google = new Company("Google", "class", "post-content", "http://www.googlepress.blogspot.co.uk/", "^.*\\/[0-­9]{4}\\/[0-9]{2}\\/.*$", "");
+		Company Google = new Company("Google", "class", "press-content-section", "http://www.googlepress.blogspot.co.uk/", "^.*\\/[0-­9]{4}\\/[0-9]{2}\\/.*$", "");
 		Companies.add(Google);
 		Company Dell = new Company("Dell", "class", "uif_maincontent", "http://www.dell.com/learn/uk/en/ukcorp1/viewall/newsroom-press-releases?page=2&pageSize=50", "^.*\\/ukcorp1\\/press-releases\\/.*$", "http://www.dell.com");
 		Companies.add(Dell);
@@ -232,9 +260,13 @@ public class Scraper {
 		Companies.add(EMC);
 		
 		//printUrlsFromSelected(Dell);
+		//printSelectedByClass(Google);
 		
-		//printUrlsToFile(Samsung);
-		 readUrlsFromFile(Panasonic);
+		//for (Company x : Companies){
+			readThenPrint(Dell);
+		//}
+		//(Samsung);
+		//System.out.println(readUrlsFromFile(Samsung));
 			
 		
 	}
