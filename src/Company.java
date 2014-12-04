@@ -147,20 +147,21 @@ public class Company {
 	
 	/**
 	 * Reads URLs from saved .txt file for each Company, sends each line to saveContent 
-	 * @param companyName
+	 * @param readPathAppend - 
+	 * @param savePathAppend
 	 */
-	void readThenPrint() {
+	void readThenPrint(String readPathAppend, String savePathAppend) {
 		StringBuffer stringBuffer = null;	
 		String name = this.getCompanyName();
 		int counter = 0;
 		try {
-				File file = new File("/Users/Steve/Workspace/ScraperTest/Filewriter/" + name  + ".txt");
+				File file = new File("/Users/Steve/Workspace/ScraperTest/Filewriter/" + name + "/" + name  + readPathAppend + ".txt");
 				FileReader fileReader = new FileReader(file);
 				BufferedReader bufferedReader = new BufferedReader(fileReader);
 				stringBuffer = new StringBuffer();
 				String line;
 				while ((line = bufferedReader.readLine()) != null) {
-					this.saveContent(line.toString(), counter);
+					this.saveContent(line.toString(), counter, savePathAppend);
 					stringBuffer.append(line);
 					stringBuffer.append("\n");
 					counter++;
@@ -170,12 +171,11 @@ public class Company {
 				e.printStackTrace();
 			}
 		}
-	
-	private void saveContent(String currentURL, int counter) throws IOException {
+	 void saveContent(String currentURL, int counter, String savePathAppend) throws IOException {
 		Document doc;
 		String name = this.getCompanyName();
 		String css = this.getCssClassOrID();
-		File file = new File("/Users/Steve/Workspace/ScraperTest/Filewriter/" + name + "/" + name + "PRscrape" + counter + ".txt");
+		File file = new File("/Users/Steve/Workspace/ScraperTest/Filewriter/" + name + "/" + name + savePathAppend + counter + ".txt");
 		if (!file.exists()) { 
 			file.createNewFile();
 		}
@@ -191,6 +191,56 @@ public class Company {
 			}
 			else { Element contentMatchingID = doc.getElementById(this.getCssSelector());
 			bw.write(contentMatchingID.text());
+			}
+		bw.close();
+		fw.close();
+		System.out.println("Printed to" + " " + file.getAbsoluteFile() + ", nice work m8!");
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+	}
+	
+	/**
+	 * Reads URLs from saved .txt file for each Company, sends each line to saveContent 
+	 * @param readPathAppend - 
+	 * @param savePathAppend
+	 */
+	void readThenPrintLinks(String readPathAppend, String savePathAppend) {
+		StringBuffer stringBuffer = null;	
+		String name = this.getCompanyName();
+		try {
+				File file = new File("/Users/Steve/Workspace/ScraperTest/Filewriter/" + name + "/" + name  + readPathAppend + ".txt");
+				FileReader fileReader = new FileReader(file);
+				BufferedReader bufferedReader = new BufferedReader(fileReader);
+				stringBuffer = new StringBuffer();
+				String line;
+				while ((line = bufferedReader.readLine()) != null) {
+					this.saveLinks(line.toString(), savePathAppend);
+					stringBuffer.append(line);
+					stringBuffer.append("\n");
+				}
+				fileReader.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+	
+	 void saveLinks(String currentURL, String savePathAppend) throws IOException {
+		Document doc;
+		String name = this.getCompanyName();
+		File file = new File("/Users/Steve/Workspace/ScraperTest/Filewriter/" + name + "/" + name + savePathAppend + ".txt");
+		if (!file.exists()) { 
+			file.createNewFile();
+		}
+		FileWriter fw = new FileWriter(file.getAbsoluteFile(), true);
+		BufferedWriter bw = new BufferedWriter(fw);
+		try {
+			doc = Jsoup.connect(currentURL).get();
+			Elements links = doc.getElementsByTag("a");
+			for (Element link : doc.select("a")) {
+				if (link.absUrl("href").matches(this.getregEx())) {
+					bw.write(this.getDomain() + link.absUrl("href") + "\n");
+				}
 			}
 		bw.close();
 		fw.close();

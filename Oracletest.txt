@@ -1,0 +1,886 @@
+<!doctype html public "-//w3c//dtd xhtml 1.0 transitional//en" "http://www.w3.org/tr/xhtml1/dtd/xhtml1-transitional.dtd"> 
+
+<html>
+<head><meta content="text/html; charset=utf-8" http-equiv="content-type" />
+	<script type="text/javascript">
+   var _u = "undefined";
+   var g_httprelativewebroot = "/ocom/";
+   var sscontributor = false;
+   var ssforcecontributor = false;
+   var sshidecontributorui = false;
+   var ssurlprefix = "/us/";
+   var ssurltype = "2";
+   
+   var g_navnode_path = new array();
+       g_navnode_path[0] = '8';
+       g_navnode_path[1] = 'ocomen-about';
+       g_navnode_path[2] = 'ocomen-pressroom';
+   var g_sssourcenodeid = "ocomen-pressroom";
+   var g_sssourcesiteid = "ocomen";
+</script>
+
+
+  <script id="ssinfo" type="text/xml" warning="do not modify!">
+  <ssinfo >
+    <fragmentinstance  id="fragment5" fragmentid="ocom-rightnav-contactbox" library="server:universal-fragments">
+      
+    </fragmentinstance>
+    <fragmentinstance  id="fragment6" fragmentid="ocom-rightnav-openworld" library="server:universal-fragments">
+      
+    </fragmentinstance>
+    <fragmentinstance  id="fragment7" fragmentid="ocom-rightnav-portlet" library="server:universal-fragments">
+      
+    </fragmentinstance>
+    <fragmentinstance  id="fragment8" fragmentid="ocom-footer-infocompany" library="server:universal-fragments">
+      
+    </fragmentinstance>
+    <fragmentinstance  id="fragment9" fragmentid="ocom-footer-links" library="server:universal-fragments">
+      
+    </fragmentinstance>
+    <fragmentinstance  id="fragment11" fragmentid="ocom-pressrelease-banner" library="server:universal-fragments">
+      
+    </fragmentinstance>
+    <fragmentinstance  id="fragment12" fragmentid="ocom-header-logo" library="server:ocom-fragment-libraray">
+      
+    </fragmentinstance>
+    <fragmentinstance  id="fragment13" fragmentid="ocom-header-signin-worldwide" library="server:ocom-fragment-libraray">
+    </fragmentinstance>
+    <fragmentinstance  id="fragment15" fragmentid="ocom-header-search" library="server:ocom-fragment-libraray">
+      
+    </fragmentinstance>
+    <fragmentinstance  id="fragment16" fragmentid="ocom-horinav" library="server:ocom-fragment-libraray">
+      
+    </fragmentinstance>
+    <fragmentinstance  id="fragment19" fragmentid="ocom-banner-pressrelease" library="server:ocom-fragment-libraray">
+      
+    </fragmentinstance>
+    <fragmentinstance  id="fragment24" fragmentid="ocom-pressrelease-rhc-portlet" library="server:ocom-fragment-libraray">
+    </fragmentinstance>
+    <fragmentinstance  id="fragment25" fragmentid="ocom-footer" library="server:ocom-fragment-libraray">
+      
+    </fragmentinstance>
+    <fragmentinstance  id="fragment27" fragmentid="universal-metatag" library="server:universal-fragments">
+    </fragmentinstance>
+    <fragmentinstance  id="fragment30" fragmentid="sitefinder" library="server:universal-fragments">
+      
+    </fragmentinstance>
+    <fragmentinstance  id="fragment31" fragmentid="universal-addthis-print-email" library="server:universal-fragments">
+      
+    </fragmentinstance>
+    <fragmentinstance  id="fragment33" fragmentid="ocom-commonassets" library="server:ocom-fragment-libraray">
+      
+    </fragmentinstance>
+    <fragmentinstance  id="fragment34" fragmentid="ocom-rhc-contactbox-oow" library="server:ocom-fragment-libraray">
+      
+    </fragmentinstance>
+       <fragmentinstance  id="fragment50" fragmentid="universal_localization_fragment" library="server:universal_localization_frag">
+    </fragmentinstance>
+    <fragmentinstance  id="fragment51" fragmentid="universal_localization_fragment" library="server:universal_localization_frag">
+    </fragmentinstance>
+    <fragmentinstance  id="fragment52" fragmentid="universal_localization_fragment" library="server:universal_localization_frag">
+    </fragmentinstance>
+    <fragmentinstance  id="fragment53" fragmentid="universal_localization_fragment" library="server:universal_localization_frag">
+    </fragmentinstance>
+    <fragmentinstance  id="fragment54" fragmentid="universal_localization_fragment" library="server:universal_localization_frag">
+    </fragmentinstance>
+    <fragmentinstance  id="fragment55" fragmentid="universal-search-fragment" library="server:universal-search-fragmet-lib">
+      
+    </fragmentinstance>
+    <fragmentinstance  id="fragment56" fragmentid="externalnavigationhorizontal" library="server:externalnavhorizontallib">
+    </fragmentinstance>
+    <fragmentinstance  id="fragment57" fragmentid="externalbreadcrumb" library="server:external_breadcrumb">
+    </fragmentinstance>
+    <fragmentinstance  id="fragment58" fragmentid="universal_localization_fragment" library="server:universal_localization_frag">
+    </fragmentinstance>
+	<fragmentinstance  id="fragment36" fragmentid="ocom-rhs-expand-close" library="server:ocom-rhs-expand-close-portlet">
+      
+    </fragmentinstance>
+    <fragmentinstance  id="fragment37" fragmentid="externalnavhorizontal" library="server:external_nav_horizontal">
+    </fragmentinstance>
+    <fragmentinstance  id="fragment38" fragmentid="externalnavvertical" library="server:external_nav_vertical">
+    </fragmentinstance>
+    <fragmentinstance  id="fragment39" fragmentid="externalsitecatalystfragment" library="server:externalscfragmentlib">
+      
+    </fragmentinstance>
+	    <fragmentinstance  id="fragment59" fragmentid="sitecatalyst-ocom-standard" library="server:sitecatalyst-ocom-standard">
+      
+    </fragmentinstance>
+      <fragmentinstance  id="fragment60" fragmentid="mosaic-header-content" library="server:mosaic-header-content">
+        
+      </fragmentinstance>
+      <fragmentinstance  id="fragment61" fragmentid="ocomheader" library="server:ocomheader">
+        
+      </fragmentinstance>
+      <fragmentinstance  id="fragment62" fragmentid="atgchat" library="server:atg_chat">
+        
+      </fragmentinstance>
+      <fragmentinstance  id="fragment63" fragmentid="ocomfooter" library="server:ocomfooter">
+        
+      </fragmentinstance>
+    <fragmentinstance  id="fragment64" fragmentid="mobi-header" library="server:mobi_header">
+      
+    </fragmentinstance>
+    <fragmentinstance  id="fragment65" fragmentid="mobi-footer" library="server:mobi_footer">
+      
+    </fragmentinstance>
+      <fragmentinstance  id="fragment66" fragmentid="ocom-commonassets" library="server:ocom-fragment-libraray">
+        
+      </fragmentinstance>
+
+    <region  id="region1" name="contribution" flags="111000110000" metadata="" dccommand="ssincdynamicconversionbyrulesengine(ss_datafile)">
+      <switchregioncontent  createnewxml="false" createnewnative="false" choosemanaged="true" chooselocal="false" choosenone="false">
+        <choosemanagedquerytext  corecontentonly="false">
+          <![cdata[xwebsiteobjecttype <matches> `data
+file` <or> xwebsiteobjecttype <matches> `native
+document`]]>
+        </choosemanagedquerytext>
+      </switchregioncontent>
+    </region>
+    <region  id="region2" name="region2" flags="111111110000" metadata="" dccommand="ssincdynamicconversion(ss_datafile, 'ocom-pressrelease-dc-template', 'snippet_layout')">
+      <element  id="region2_element1" name="cont-center-content" label="main content" type="1" flags="111111111111111111111100000111100000000000001111001110010000000000001010000000000000000000000000">
+        <linktoregioncontent  createnewxml="true" createnewnative="false" choosemanaged="true" chooselocal="false" choosenone="false">
+          <choosemanagedquerytext  corecontentonly="false">
+            <![cdata[xwebsiteobjecttype <matches> `data file` <or> xwebsiteobjecttype <matches> `native document`]]>
+          </choosemanagedquerytext>
+        </linktoregioncontent>
+        <objectproperties  docname="ss_generic_properties_form">
+
+        </objectproperties>
+      </element>
+      <switchregioncontent  createnewxml="true" createnewnative="true" choosemanaged="true" chooselocal="false" choosenone="false">
+        <createnewnativedoctypes >
+          <![cdata[.doc]]>
+        </createnewnativedoctypes>
+        <choosemanagedquerytext  corecontentonly="false">
+          <![cdata[xwebsiteobjecttype <matches> `data
+file` <or> xwebsiteobjecttype <matches> `native
+document`]]>
+        </choosemanagedquerytext>
+      </switchregioncontent>
+    </region>
+  </ssinfo>
+  </script>
+
+  
+
+<!-- ss_begin_snippet(fragment66,ocom-commonassets-droppoint)-->
+				
+				
+			<!-- ss_end_snippet(fragment66,ocom-commonassets-droppoint)-->
+
+<!--ss_begin_snippet(fragment41,includes)-->			<!--ss_end_snippet(fragment41,includes)-->
+
+<!--ss_begin_snippet(fragment46,head_tags)-->
+
+
+												     
+     	
+
+
+
+
+	
+<title>oracle reinvents database protection with zero data loss recovery appliance</title>
+<meta name="title" content="oracle reinvents database protection with zero data loss recovery appliance">
+<meta name="description" content="now available, the industry’s only solution to offer end-to-end data protection for oracle databases eliminates data loss and maintains business availability">
+<meta name="keywords" content="zero data loss recovery appliance, zdlra, recovery appliance">
+<meta name="robots" content="index, follow">
+<meta name="country" content="">
+<meta name="language" content="en">
+<meta name="updated date" content="9/29/14 10:20 am">
+
+			<!--ss_end_snippet(fragment46,head_tags)-->
+
+	<link rel="alternate" media="only screen and (max-width: 640px)" href="https://m.oracle.com/us/corporate/press/2313883" >
+  <style type="text/css">
+  .sitefinder_content {position:absolute;right:50%; margin-right:-495px; z-index:100002;overflow: auto; top:5px;}
+  #wrapper_fixedwidth { min-width:974px; }
+  .header{height:140px; *height:130px;}
+  .menu-otn {display:none;}
+  </style>
+<!-- ss_begin_snippet(fragment62,1)-->
+				
+			<!-- ss_end_snippet(fragment62,1)-->
+<!-- ss_begin_snippet(fragment66,ocom-commonassets)--><link rel="stylesheet" type="text/css" href="/us/assets/ocom-mosaic.css" />
+<link rel="stylesheet" type="text/css" href="/us/assets/master-mosaic.css" />
+<script language="javascript" type="text/javascript" src="/us/assets/jquery.js"></script>
+<script language="javascript" type="text/javascript" src="/us/assets/oraclelib-mosaic.js"></script>
+
+    <script type='text/javascript' src='//consent-st.truste.com/get?name=notice.js&domain=oracle.com&c=teconsent&language=en&text=true'></script>
+<!--[if ie]>
+  <style>
+    .logo_align{margin-bottom: 4px; margin-left:0px;}
+    .search_position{margin:7px 3px 14px 16px;}
+    #paneldiv_search .contentbg{padding:30px 5px 5px 5px; } 
+    ul#navigation div.submenu {border-bottom:1px solid #b7b7b7;}
+    ul#navigation div.submenu .bottomleft{background:none; width:15px; height:30px; float:left;  margin-left:-16px; margin-bottom:-42px; }
+    ul#navigation div.submenu .bottomcenter{background:none; height:30px;  margin-left:15px; margin-right:15px; float:left; width:380px;} 
+    ul#navigation div.submenu .bottomright{background:none; width:15px; height:30px; float:left; }
+    ul#navigation div.submenu .partner_bottomleft{ background:none; width:15px; height:30px;  float:left; margin-left:-16px; margin-bottom:-42px; clear:left; margin-top:15px;}
+	ul#navigation div.submenu .partner_bottomcenter{  background:none; width:382px; height:30px; margin-left:15px;  float:center;}
+	ul#navigation div.submenu .partner_bottomright{  background:none; width:15px; height:30px; float:right; margin-right:-15px;}
+  </style>
+<![endif]-->
+<!--[if ie 6]>
+  <style>
+  #paneldiv_search .bottomleftcurv{background:none; width:15px; height:30px; float:left;}
+  #paneldiv_search .centerbottom{background:none;width:153px;height:30px;float:left;}
+  #paneldiv_search .bottomrightcurv{background:none;width:15px;height:30px;float:right;}
+  #paneldiv_search .contentbg{border-bottom:1px solid #ababab;}
+  #navigation{width:971px;}
+  </style>
+<![endif]-->
+ <!--brightcove script line and lightbox code--> 
+<div id="bcvideoplayer" style="display: none;">&nbsp;</div>
+<div class="lightbox_overlay" id="lightbox_brightcove" onclick="showclose();" style="display: none; z-index: 30000;"><!--spacer-->&nbsp;</div>
+			<!-- ss_end_snippet(fragment66,ocom-commonassets)--></head>
+<body class="f01 f01v0 f01bg">
+<a name="top"></a>
+	<div class="f01bg"></div>
+	<div class="f01v0w1">
+<!-- ss_begin_snippet(fragment61,ocomheader)-->				
+		<!-- u01v0 -->
+<div data-menusrc="/us/mosaicmenu/index.html" id="u01" class="u01">
+<div data-trackas="header" class="u01tools">
+<div class="u01logo"><a data-lbl="logo" href="http://www.oracle.com">oracle</a></div>
+<ul class="u01navtools">
+    <li><a class="menu-otn" data-lbl="country" href="/us/mosaicmenu/index.html#otn-menu-countryselect">country</a></li>
+    <li><a class="menu-ocom menu-multicol" data-lbl="country" href="/us/corporate/region/index.html#ocom-menu-countryselect">country</a></li>
+    <li><a data-lbl="communities" href="/us/community/index.html#menu-communities">communities</a></li>
+    <li><a data-lbl="i-am-a" href="/us/corporate/role/index.html#menu-iam">i am a...</a></li>
+    <li><a data-lbl="i-want-to" href="/us/corporate/task/index.html#menu-iwant">i want to...</a></li>
+</ul>
+<ul data-lbl="welcome" class="u01pfile">
+    <li id="pfile-wlcm">welcome</li>
+    <li id="pfile-acct"><a data-lbl="account" href="https://profile.oracle.com/myprofile/account/secure/update-account.jspx?nexturl=">account</a></li>
+    <li id="pfile-sout"><a data-lbl="signout" href="javascript:sso_sign_out();">sign out</a></li>
+    <li id="pfile-regs"><a data-lbl="signin" href="http://www.oracle.com/webapps/redirect/signon?nexturl=">sign in/register</a></li>
+    <li id="pfile-help"><a data-lbl="help" href="/us/corporate/contact/about-your-account-070507.html">help</a></li>
+</ul>
+<div class="u01search">
+<form data-errormsg="no search term entered. please try again" action="http://search.oracle.com/search/search" method="get" name="searchform" class="u01searchform">
+    <input type="hidden" value="1" name="start" /> 				<input type="hidden" name="search_p_main_operator" value="all" /> 				<input value="search" name="q" class="textcnt autoclear" id="txtsearch" /> 				<input type="submit" value="submit search" class="u01searchbttn" />
+</form>
+</div>
+</div>
+<ul data-trackas="hnav" class="u01nav">
+    <li><a data-lbl="productsandservices" href="http://www.oracle.com/us/products/index.html#menu-products-n-services" data-trackas="hnav" class="u01nav">
+    <h3>products</h3>
+    </a></li>
+    <li><a data-lbl="solutions" href="http://www.oracle.com/us/solutions/index.html#menu-solutions" data-trackas="hnav" class="u01nav">
+    <h3>solutions</h3>
+    </a></li>
+    <li><a data-lbl="downloads" href="http://www.oracle.com/us/downloads/index.html#menu-downloads" data-trackas="hnav" class="u01nav">
+    <h3>downloads</h3>
+    </a></li>
+    <li><a data-lbl="store" href="https://shop.oracle.com/#menu-store" data-trackas="hnav" class="u01nav">
+    <h3>store</h3>
+    </a></li>
+    <li><a data-lbl="support" href="http://www.oracle.com/us/support/index.html#menu-support" data-trackas="hnav" class="u01nav">
+    <h3>support</h3>
+    </a></li>
+    <li><a data-lbl="training" href="http://education.oracle.com/#menu-training" data-trackas="hnav" class="u01nav">
+    <h3>training</h3>
+    </a></li>
+    <li><a data-lbl="partners" href="http://www.oracle.com/partners/index.html#menu-partners" data-trackas="hnav" class="u01nav">
+    <h3>partners</h3>
+    </a></li>
+    <li><a data-lbl="about" href="http://www.oracle.com/us/corporate/index.html#menu-about" data-trackas="hnav" class="u01nav">
+    <h3>about</h3>
+    </a></li>
+    <li><a data-lbl="oracletechnologynetwork" href="http://www.oracle.com/technetwork/index.html#menu-otn" data-trackas="hnav" class="u01btn">
+    <h3>otn</h3>
+    </a></li>
+</ul>
+</div>
+<!-- /u01v0 -->
+ 
+			<!-- ss_end_snippet(fragment61,ocomheader)-->
+<!--ss_begin_snippet(fragment57,2)-->
+	
+	<!--**override root for testing purposes:**-->
+	<!--** header logo ** -->
+	<!--** header search ** -->
+	<!--** welcome signin ** -->
+	 
+	
+	<!--** footer ** -->
+	
+<!--** header logo ** -->
+                
+    
+
+  <!-- mosaic -->
+<!-- communities-->
+
+<!-- user category -->
+ 
+<!-- user intrest -->
+<!-- navigation starts here -->
+     
+          
+                    
+        
+        
+          
+
+        
+      
+      
+     
+    
+     
+        
+            
+            
+       
+        
+      
+     
+     
+        
+<!-- user community sc code -->
+
+<!-- user category sc code -->
+
+ 
+<!-- user interest sc code -->
+
+
+	
+	    <div id="breadcrumb">
+	    <div class="breadcrumb_left"></div>
+	    <div class="breadcrumb_center">
+	    <div style="position:relative;">
+	    <span class="breadcrumb_content">
+			    <a href="/us/corporate/index.html" onclick="navtrack('ocom','en','breadcrumb','ocomen-about');">about</a>
+			    <span class="rightarrow"><img src="http://www.oracleimg.com/us/assets/rightarrow-066625.gif" /></span>
+			    <span class="active">newsroom</span>
+	    </span>
+	    </div>
+	    </div>
+	    <div class="breadcrumb_right"></div>
+	    </div>
+
+			<!--ss_end_snippet(fragment57,2)-->
+     
+<!--ss_begin_snippet(fragment46,code)-->			<!--ss_end_snippet(fragment46,code)-->
+
+
+    <div id="wrapper_lnav_maincont_rcol_foot">
+      <div id="wrapper_fixedwidth_leftnav">
+        
+<!--ss_begin_snippet(fragment38,2)-->
+	
+	<!--**override root for testing purposes:**-->
+	<!--** header logo ** -->
+	<!--** header search ** -->
+	<!--** welcome signin ** -->
+	 
+	
+	<!--** footer ** -->
+	
+<!--** header logo ** -->
+                
+    
+
+  <!-- mosaic -->
+<!-- communities-->
+
+<!-- user category -->
+ 
+<!-- user intrest -->
+<!-- navigation starts here -->
+     
+          
+                    
+        
+        
+          
+
+        
+      
+      
+     
+    
+     
+        
+            
+            
+       
+        
+      
+     
+     
+        
+<!-- user community sc code -->
+
+<!-- user category sc code -->
+
+ 
+<!-- user interest sc code -->
+
+
+ <!--** retrieve input parameters: **-->
+		
+
+			
+		
+	<!--** retrieve the root node: **-->
+	<!--rootid = ssgetfirstnodeid(siteid)-->
+	<!--nodeid = rootid-->
+
+	<!--** retrieve the nodelevel and set it to ssnumvertlevels **-->
+	<!--** retrieving the nodelevel **-->
+		        	            
+                <!--** get the section id in custom section property **-->		
+				                             
+		    	
+   
+                	
+                 
+                
+				  
+                <div class="topleftnavborder_li"><!--spacer--></div> 
+                <div class="xmlleftnav_li" id="xmlleftnav">
+
+    
+                		
+ 
+		<!--** section link: **-->    
+		     
+		    		   
+			  <ul class="level01">
+		    <li class="level01top"><a class="level01_top_link_subnav_active" href = "/us/corporate/press/index.html" target=_top onclick="navtrack('ocom','en','lnav','pressroom');"  ><div>newsroom</div></a>
+ 
+											
+               <ul class="level02">
+				
+
+                          
+ 		          			 							
+				
+
+                          
+ 		            	
+				  <li><a class="level02_link_subnav" href = "/us/corporate/press/pressrelease/index.html" onclick="navtrack('ocom','en','lnav','pressrelease');"   target=_blank><div>press release</div></a></li>
+                     	 			 							
+				
+
+                          
+ 		          			 							
+				
+
+                          
+ 		            	
+				  <li><a class="level02_link_subnav" href = "/us/corporate/press/boardofdirectors/index.html" onclick="navtrack('ocom','en','lnav','boardofdirectors');"   target=_top><div>board of directors</div></a></li>
+                     	 			 							
+				
+
+                          
+ 		            	
+				  <li><a class="level02_link_subnav" href = "/us/corporate/press/executives/index.html" onclick="navtrack('ocom','en','lnav','executives');"   target=_top><div>executives</div></a></li>
+                     	 			 							
+				
+
+                          
+ 		            	
+				  <li><a class="level02_link_subnav" href = "/us/corporate/press/spokespeople/index.html" onclick="navtrack('ocom','en','lnav','spokespeople');"   target=_top><div>spokespeople</div></a></li>
+                     	 			 							
+				
+
+                          
+ 		            	
+				  <li><a class="level02_link_subnav" href = "/us/corporate/press/mediakits/index.html" onclick="navtrack('ocom','en','lnav','mediakits');"   target=_top><div>media kits</div></a></li>
+                     	 			 							
+				
+
+                          
+ 		          			 							
+				
+
+                          
+ 		          			 							
+				
+
+                          
+ 		            	
+				  <li><a class="level02_link_subnav" href = "/us/corporate/press/publicrelationscontacts/index.html" onclick="navtrack('ocom','en','lnav','pubrelationscontact');"   target=_top><div>public relations contacts</div></a></li>
+                     	 			 							
+				
+
+                          
+ 		            	
+				  <li><a class="level02_link_subnav" href = "/us/corporate/press/apacmediacenter/index.html" onclick="navtrack('ocom','en','lnav','225');"   target=_blank><div>asia pacific media center</div></a></li>
+                     	 			 							
+				
+
+                          
+ 		            	
+				  <li><a class="level02_link_subnav" href = "/us/corporate/press/emeamediacenter/index.html" onclick="navtrack('ocom','en','lnav','226');"   target=_blank><div>europe, middle east, and africa media center</div></a></li>
+                     	 			 							
+				
+
+                          
+ 		            	
+				  <li><a class="level02_link_subnav" href = "/us/corporate/press/japanmediacenter/index.html" onclick="navtrack('ocom','en','lnav','246');"   target=_blank><div>japan media center</div></a></li>
+                     	 			 							
+				
+
+                          
+ 		            	
+				  <li><a class="level02_link_subnav" href = "/us/corporate/press/ladnewsroom/index.html" onclick="navtrack('ocom','en','lnav','ladnewsroom');"   target=_blank><div>latin america newsroom</div></a></li>
+                     	 			 							
+				
+
+                          
+ 		          			 							
+				
+		 </ul>										
+		   </li></ul>
+                 
+     	        </div>
+		<div class="botleftnavborder_li"><!--spacer--></div>
+											
+	<!--** end of externalnavmultiv **-->
+
+
+			<!--ss_end_snippet(fragment38,2)-->
+
+      </div><!--printer view condition end -->
+
+      <div style="_width: 603px" id="wrapper_fixedwidth_maincontent">
+	  		<!-- ss_begin_snippet(fragment62,2)-->				<script type="text/javascript">
+	var atg_fname = "";
+	var atg_lname = "";
+	var atg_email = "";
+	var atg_company = "";
+	//if user is logged in
+	if (user.guid) {
+		//read user properties from cookie object user
+		atg_fname = user.firstname;
+		atg_lname = user.lastname;
+		atg_email = user.username;
+
+		//get cookie value ora_www_personalize and tokenize it to get value for cn (company name)
+		var personalizecookie = (function(){
+			var i,x,y,arrcookies=document.cookie.split(";");
+			for (i=0;i<arrcookies.length;i++) {
+				x=arrcookies[i].substr(0,arrcookies[i].indexof("="));
+				y=arrcookies[i].substr(arrcookies[i].indexof("=")+1);
+				x=x.replace(/^\s+|\s+$/g,"");
+				if (x=="ora_www_personalize") {
+					return unescape(y);
+				}
+			}
+		})();
+		jquery(document).ready(function()
+		{ 
+		//check truste to state
+			try {
+			var trustchk = truste.cma.callapi("getconsentdecision","oracle.com");
+			trustchk = (trustchk.consentdecision != 1) ? true : false;
+		 	  }
+			catch(err){
+			var trustchk = true; // local testing -> set to true
+		    	}
+		
+		if(personalizecookie != null && trustchk)
+		{
+			var cpair = ""; 
+			var cname = "" 
+			var cvalue = ""; 
+			var all_values = personalizecookie.split( '~' ); 
+			for (var i = 0; i < all_values.length; i++ )
+			{ 
+				cpair = all_values[i].split( ':' ); 
+				cname = cpair[0].replace(/^\s+|\s+$/g, ''); 
+				if (cname == "cn")
+				{ 
+					cvalue = unescape(cpair[1].replace(/^\s+|\s+$/g, '')); 
+					break; 
+				} 
+			} 
+		if (cvalue.length != 0)
+			{ 
+				atg_company = cvalue; 
+			} 
+		} 
+		});
+} 
+</script>
+
+
+
+<!--country code to be read from atgmapping-->
+
+
+<script type="text/javascript">
+	var atg_country = "us";
+</script>
+			<!-- ss_end_snippet(fragment62,2)-->
+        <!--start of center content--><!--contribution region starts here -->
+
+        <div class="centercontentblk" >
+          
+<!--ss_begin_openregionmarker(region2)-->
+
+	<!-- transit - infobefore -->
+<!--ss_begin_snippet(fragment11,ocom-pressrelease-banner)-->
+<div id=pressreleaseheader><span class=contents>oracle press 
+release</span></div><!--ss_end_snippet(fragment11,ocom-pressrelease-banner)-->
+<div class=toprptimg>
+<div class=bottomrptimg>
+<div class=leftrptimg>
+<div class=rightrptimg>
+<div class=bottomleftimg>
+<div class=bottomrightimg>
+<div class=topleftimg>
+<div class=toprightimg>
+<div class=pressrelease style="padding:15px 15px 15px 15px;">
+<h1>oracle reinvents database protection with zero data loss recovery appliance</h1><h2>now available, the industry’s only solution to offer end-to-end data protection for oracle databases eliminates data loss and maintains business availability</h2>
+
+<div class="pressdate" >oracle openworld, san francisco – september 29, 2014</div><h3>news summary</h3><p class="pressbody">during his opening keynote at oracle openworld, oracle executive chairman and chief technology officer larry ellison announced the general availability of oracle’s zero data loss recovery appliance, the world&#39;s first and only engineered system designed specifically for oracle database protection. this massively scalable appliance delivers unparalleled data protection, efficiency, and scalability.</p><h3>news facts</h3><div class="pressbullet">  <!-- transit - hyperlink --><!-- .http://www.oracle.com/recoveryappliance. --><a href="http://www.oracle.com/recoveryappliance" target="_top">oracle’s zero data loss recovery appliance</a> (recovery appliance) is the first appliance ever to deliver zero data loss protection for critical oracle databases. when using today’s solutions to restore a database, businesses typically lose all data generated since the last backup—often hours to days of critical data.</div><div class="pressbullet">  the recovery appliance dramatically reduces the impact of backups on production servers and networks, virtually eliminating the need for lengthy backup windows.  </div><div class="pressbullet">  the cloud-scale architecture enables a single recovery appliance to manage the data protection requirements of thousands of databases, avoiding the cost and complexity of disparate backup systems.</div><h3>reinventing database protection</h3><p class="pressbody">existing data protection solutions fail to meet the demands of critical databases because they treat databases as simply files to copy rather than as transactional systems with specific data integrity, performance, and availability requirements. with today’s solutions, business data is lost, end users are impacted, and deployment and management are complex and fragmented. oracle’s zero data loss recovery appliance tightly integrates advanced data protection technologies with oracle database to address these challenges head-on.</p><p class="pressbody">the zero data loss recovery appliance:</p><div class="pressbullet">  eliminates data loss: unique database integration enables continuous transport of redo data to the appliance, providing real-time protection for the most recent transactions so that databases can be restored without data loss.  </div><div class="pressbullet">  eliminates production impact: backup algorithms integrated into oracle database send only changed data to the appliance, minimizing production database impact, i/o traffic, and network load. all expensive backup processing is offloaded to the appliance.</div><div class="pressbullet">  offloads tape archival: the recovery appliance can directly archive database backups to low-cost tape storage, offloading production database servers. archival operations can run both day and night to improve tape drive utilization.  </div><div class="pressbullet">  enables restore to any point in time: the database change data stored on the appliance can be used to create virtual full database copies at any desired point in time.</div><div class="pressbullet">  delivers cloud-scale protection: a single recovery appliance can serve the data protection requirements of thousands of databases in a data center or region. capacity expands seamlessly to petabytes of storage, with no downtime.</div><div class="pressbullet">  protects data from disasters: the recovery appliance can replicate data in real time to a remote recovery appliance or to oracle database backup cloud service to protect business data from site outages.<a name="p23_3344"></a> database blocks are continuously validated to eliminate data corruption at any stage of transmission or processing.</div><h3>supporting quotes</h3><div class="pressbullet">  “the zero data loss recovery appliance marks a completely new approach to data protection– one that focuses on business availability, and not just backups. companies no longer have to worry about losing critical business data or the performance impact of backups on production environments,” said juan loaiza, senior vice president oracle corporation. “for the first time, organizations can meet all their critical database protection needs – including real-time protection, end-to-end recovery and centralized control for thousands of databases – with a single system.”</div><div class="pressbullet">  “the oracle zero data loss recovery appliance is a terrific addition to the oracle engineered systems portfolio,” said mach terry, senior vice president and head of the information technology division at acleda bank plc. “with its support for real-time redo&nbsp;transport,&nbsp;the appliance is designed&nbsp;to bring data guard-like robust data protection not just for our mission critical applications - but for all the oracle&nbsp;databases in our data center. also, with its support for incremental-forever backups, we don&#39;t have to take periodic full backups, and this should ease&nbsp;the complexity and improve the speed of our backup and restore operations.&quot;&nbsp;</div><div class="pressbullet">  the real-time redo and incremental-forever features of the zero data loss recovery appliance show great potential as they lower the backup impact even further than our current solution, in which standby database servers must still bear the full impact of backup operations,” said szymon skorupinski, dba and backup services manager, cern it. “at the same time, virtual full backups allow overall database recovery times to be reduced by eliminating incremental apply operations - this would be a critical benefit in cern&#39;s environment where the monthly backup traffic is constantly growing and approaching the petabyte range.”</div><div class="pressbullet">  “enterprises need to protect vital data for their critical business applications in real time without the downtime or data loss often experienced when using&nbsp;today’s solutions&nbsp;traditional approaches,” said laura dubois, program vice president for idc&#39;s storage practice. “the zero data loss recovery appliance meets this demand with a simple, yet powerful solution that easily scales to protect databases enterprise-wide and meet ever-stringent recovery point objectives.”</div><h3>supporting resources</h3>
+
+<div class="pressbulletsinglespace">  <!-- transit - hyperlink --><!-- .http://www.oracle.com/ocom/groups/systemobject/@mktg_admin/documents/webcontent/videoplayer-ocom.html?bctid=3807058665001&playertype=single-social&size=w01&shareurl=http://www.oracle.com. --><a href="http://www.oracle.com/ocom/groups/systemobject/@mktg_admin/documents/webcontent/videoplayer-ocom.html?bctid=3807058665001&playertype=single-social&size=w01&shareurl=http://www.oracle.com" target="_top">zero data loss recovery appliance: product webcast</a></div>
+
+<div class="pressbulletsinglespace">  <!-- transit - hyperlink --><!-- .http://www.oracle.com/us/products/engineered-systems/recovery-appliance-ds-2313692.pdf. --><a href="http://www.oracle.com/us/products/engineered-systems/recovery-appliance-ds-2313692.pdf" target="_top">zero data loss recovery appliance: data sheet</a></div>
+
+<div class="pressbulletsinglespace">  <!-- transit - hyperlink --><!-- .http://www.oracle.com/us/products/engineered-systems/recovery-appliance-twp-2313693.pdf. --><a href="http://www.oracle.com/us/products/engineered-systems/recovery-appliance-twp-2313693.pdf" target="_top">zero data loss recovery appliance: white paper</a></div>
+
+<div class="pressbulletsinglespace">  <!-- transit - hyperlink --><!-- .http://www.oracle.com/us/products/engineered-systems/recovery-appliance-infographic-2313623.pdf. --><a href="http://www.oracle.com/us/products/engineered-systems/recovery-appliance-infographic-2313623.pdf" target="_top">zero data loss recovery appliance: infographic</a></div>
+
+<div class="pressbulletsinglespace">  <!-- transit - hyperlink --><!-- .http://www.oracle.com/us/products/database/overview/index.html. --><a href="http://www.oracle.com/us/products/database/overview/index.html" target="_top">oracle database</a></div>
+
+<div class="pressbulletsinglespace">  <!-- transit - hyperlink --><!-- .https://www.oracle.com/engineered-systems/index.html. --><a href="https://www.oracle.com/engineered-systems/index.html" target="_top">oracle engineered systems</a></div>
+
+<div class="pressbulletsinglespace">  connect with oracle database high availability via&nbsp;<!-- transit - hyperlink --><!-- .http://blogs.oracle.com/maa. --><a href="http://blogs.oracle.com/maa" target="_top">blog</a>,&nbsp;<!-- transit - hyperlink --><!-- .http://www.facebook.com/oracledatabase. --><a href="http://www.facebook.com/oracledatabase" target="_top">facebook</a>,&nbsp;and&nbsp;<!-- transit - hyperlink --><!-- .https://twitter.com/oracledatabase. --><a href="https://twitter.com/oracledatabase" target="_top">twitter</a></div><h3>about oracle</h3><p class="pressbody">oracle engineers hardware and software to work together in the cloud and in your data center. for more information about oracle (nyse:orcl), visit <!-- transit - hyperlink --><!-- .http://www.oracle.com/index.html. --><a href="http://www.oracle.com/index.html" target="_top">www.oracle.com</a>.</p><h3>about oracle openworld</h3>
+
+<p><font face="arial">oracle openworld san francisco is the most important business and technology conference of the year for oracle customers, prospective customers, and partners. this educational conference is dedicated to helping businesses optimize existing systems and understand upcoming industry trends and breakthroughs driven by technology. oracle openworld offers more than 2,700 educational sessions, hundreds of demos and hands-on labs, and exhibitions from more than 450 partners and customers from around the world showcasing applications, middleware, database, server and storage systems, industries, management, cloud, and infrastructure solutions—all engineered for innovation. oracle openworld 2014 is being held september 28 through october 2 at the moscone center in san francisco. for more information; to register; or to watch oracle openworld keynotes, sessions, and more, visit </font><font face="arial" color="#0000ff"><!-- transit - hyperlink --><!-- .http://www.oracle.com/openworld. --><a href="http://www.oracle.com/openworld" target="_top"><u>www.oracle.com/openworld</u></a></font><font face="arial">. join the oracle openworld discussion on </font><font face="arial" color="#0000ff"><!-- transit - hyperlink --><!-- .https://twitter.com/oracleopenworld. --><a href="https://twitter.com/oracleopenworld" target="_top"><u>twitter</u></a></font><font face="arial">, </font><font face="arial" color="#0000ff"><!-- transit - hyperlink --><!-- .https://www.facebook.com/oracleopenworld?ref=br_tf. --><a href="https://www.facebook.com/oracleopenworld?ref=br_tf" target="_top"><u>facebook</u></a></font><font face="arial">, and the </font><font face="arial" color="#0000ff"><!-- transit - hyperlink --><!-- .https://blogs.oracle.com/oracleopenworld/. --><a href="https://blogs.oracle.com/oracleopenworld/" target="_top"><u>oracle openworld blog</u></a></font><font face="arial">.</font></p><h3>about javaone</h3>
+
+<p><font face="arial">the javaone conference brings together java experts and enthusiasts for an extraordinary week of learning and networking focused entirely on all things java. with more than 550 sessions covering topics that span the breadth of the java universe, keynotes from foremost java visionaries, tutorials, and expert-led hands-on learning opportunities, javaone is the world&#39;s most important event for the java community. join the javaone discussion on </font><font face="arial" color="#0000ff"><!-- transit - hyperlink --><!-- .http://twitter.com/javaoneconf/. --><a href="http://twitter.com/javaoneconf/" target="_top"><u>twitter</u></a></font><font face="arial">, </font><font face="arial" color="#0000ff"><!-- transit - hyperlink --><!-- .http://www.facebook.com/javaone. --><a href="http://www.facebook.com/javaone" target="_top"><u>facebook</u></a></font><font face="arial">, </font><font face="arial" color="#0000ff"><!-- transit - hyperlink --><!-- .http://www.linkedin.com/groups/javaone-conference-1749197. --><a href="http://www.linkedin.com/groups/javaone-conference-1749197" target="_top"><u>linkedin</u></a></font><font face="arial">, and the </font><font face="arial" color="#0000ff"><!-- transit - hyperlink --><!-- .https://blogs.oracle.com/javaone/. --><a href="https://blogs.oracle.com/javaone/" target="_top"><u>javaone blog</u></a></font><font face="arial">.</font></p><h3>trademarks</h3><p class="pressbody">oracle and java are registered trademarks of oracle and/or its affiliates. other names may be trademarks of their respective owners.</p><h3>contact info</h3><p>
+<table>
+<tr>
+<td valign="top" width="324"><p class="pressbody">marcie bradley<br>
+oracle<br>
++1.530.214.8068<!-- transit - hyperlink --><!-- .mailto:marcie.bradley@oracle.com. --><a href="mailto:marcie.bradley@oracle.com" target="_top"><u><br>
+marcie.bradley@oracle.com</u></a></p></td>
+<td valign="top" width="264"><p class="pressbody">neil desai<br>
+blanc &amp; otus<br>
++1.415.856.5150 <!-- transit - hyperlink --><!-- .mailto:ndesai@blancandotus.com. --><a href="mailto:ndesai@blancandotus.com" target="_top"><u><br>
+ndesai@blancandotus.com</u></a></p></td></tr></table>
+</div></div></div></div></div></div></div></div></div>
+<!-- transit - infoafter -->
+
+
+
+	<comment>
+<!--ss_end_openregionmarker(region2)-->
+<!--ss_begin_element(region2_element1)--><!--ss_end_element(region2_element1)-->
+<!--ss_begin_closeregionmarker(region2)-->	</comment>
+<!--ss_end_closeregionmarker(region2)-->
+
+        </div><!--contribution region ends here --><!--end of center content-->
+<!--printer view conditions starts -->
+        <!--right nav start-->
+      </div>
+
+      <div id="wrapper_fixedwidth_rightnav">
+        <div style="background-color: #ffffff">
+          
+<!--ss_begin_snippet(fragment34,contactbox)-->				<!-- begin contact box -->
+          <div class="contactboxtop">
+            <!--spacer-->
+          </div>
+          <div class="contactboxmiddle">
+            <div class="paddingten">
+              <div class="phonenumber"><strong>oracle 1-800-633-0738</strong></div>
+              <div class="icons"><a href="mailto:oracle-press_ww@oracle.com">
+              <img src="/us/assets/contact_box_email.gif" alt="e-mail oracle media relations" width="16" height="16" /></a><a href="mailto:oracle-press_ww@oracle.com">oracle media relations</a></div>
+              <div class="icons"><a href="/us/corporate/contact/global-070511.html"><img src="/ocom/groups/public/@ocompublic/documents/digitalasset/contact_box_globe.gif" alt="global contacts" width="16" height="16" /></a><a href="/us/corporate/contact/global-070511.html">global
+                contacts</a></div>
+            </div>
+          </div>
+          <div class="contactboxbottom">
+            <!--spacer-->
+          </div>
+<!-- end contact box -->
+
+			<!--ss_end_snippet(fragment34,contactbox)-->
+
+<!--ss_begin_snippet(fragment36,ocom-rhs-expand-close)-->
+				<div class="expandall"><a title="expand all" href="javascript:expandall();">expand 
+            all</a> | <a title="close all" href="javascript:closeall();">close 
+            all</a></div>
+			<!--ss_end_snippet(fragment36,ocom-rhs-expand-close)-->
+
+<!--ss_begin_snippet(fragment24,rhc-portlet)-->
+				
+          <!-- begin portlet 1 portlet -->
+          <div class="sidebox">
+            <h4><a href="javascript:togglesidebox('sidebody1');">rss</a></h4>
+            <div id="sidebody1" class="contents">
+              <ul class="sidelist">
+                <li><a href="http://www.oracle.com/us/corporate/press/rss/rss-pr.xml">subscribe</a> <a href="http://www.oracle.com/us/corporate/press/rss/rss-pr.xml"><img src="http://www.oracleimg.com/us/assets/feed-icon-14x14.png" style="margin-left:2px;" alt="oracle recent press releases - rss feed" border="0" height="14" width="14"></a> </li>
+                <li><a href="/us/syndication/feeds/index.html">find out more about rss</a></li>
+              </ul>
+            </div>
+            <div class="sideboxbottom"><!-- spacer --></div>
+          </div>
+          <!-- end portlet 1 portlet -->
+          <!-- begin portlet 2 portlet -->
+          <div class="sidebox">
+            <h4><a href="javascript:togglesidebox('sidebody2');">newsletters</a></h4>
+            <div id="sidebody2" class="contents">
+              <ul class="sidelist">
+                <li><a href="/us/corporate/newsletter/index.html">news, articles, offers, and more, for oracle technology, applications, industries, and solutions.</a></li>
+              </ul>
+              <div class="viewall"><a href="/us/corporate/newsletter/index.html">subscribe</a></div>
+            </div>
+            <div class="sideboxbottom"><!-- spacer --></div>
+          </div>
+          <!-- end portlet 2 portlet -->
+			<!--ss_end_snippet(fragment24,rhc-portlet)-->
+
+          <script type="text/javascript">
+          displayelements(getelementsbyprefix('sidebody',document.documentelement));
+            displayrightnav();
+          </script>
+        </div>
+      </div><!--right nav end-->
+
+      <div id="wrapper_fixedwidth_footer">
+        <div class="addthisprintemail">
+          
+<!--ss_begin_snippet(fragment31,1)--> &nbsp;&nbsp;&nbsp;
+	<a href="javascript:mailpage()"><img height="16" alt="e-mail this page" src="/ocom/groups/systemobject/@mktg_admin/@ocom_admin/documents/digitalasset/email.gif" width="19" border="0" /></a> <span style="margin-bottom: 2px">
+	<a href="javascript:mailpage()">e-mail this page</a></span>&nbsp;&nbsp;&nbsp;
+	<a onclick="printerview()" href="javascript: void 0;"><img height="16" alt="printer view" src="/ocom/groups/systemobject/@mktg_admin/@ocom_admin/documents/digitalasset/print_icon.gif" width="19" border="0" />&nbsp;printer view</a>
+			<!--ss_end_snippet(fragment31,1)-->
+
+        </div>
+
+        <div class="footer">
+
+     <!-- ss_begin_snippet(fragment63,ocomfooter)-->				
+		<!-- u06v1 -->
+<div data-closeff="close info" data-openff="open info" data-trackas="ffooter" class="u06v1" id="u06v1">
+<div class="u06v1z1">&nbsp;</div>
+<div class="u06v1w1">
+<div class="u06v1w2">
+<ul>
+    <h5>oracle cloud</h5>
+    <li><a href="https://www.oracle.com/cloud/index.html" data-lbl="cloud:learn-about-oracle-cloud">learn about oracle cloud computing</a></li>
+    <li><a href="https://cloud.oracle.com/tryit" data-lbl="cloud:get-a-free-trial" target="_blank">get a free trial</a></li>
+    <li><a href="https://www.oracle.com/cloud/daas.html" data-lbl="cloud:learn-about-daas">learn about daas</a></li>
+    <li><a href="https://www.oracle.com/cloud/saas.html" data-lbl="cloud:learn-about-saas">learn about saas</a></li>
+    <li><a href="https://www.oracle.com/cloud/paas.html" data-lbl="cloud:learn-about-paas">learn about paas</a></li>
+    <li><a href="https://www.oracle.com/cloud/iaas.html" data-lbl="cloud:learn-about-iaas">learn about iaas</a></li>
+    <li><a href="https://www.oracle.com/cloud/private-cloud.html" data-lbl="cloud:learn-about-private-cloud">learn about private cloud</a></li>
+    <li><a href="https://www.oracle.com/cloud/managed-cloud.html" data-lbl="cloud:learn-about-managed-cloud">learn about managed cloud</a></li>
+</ul>
+</div>
+<div class="u06v1w2">
+<ul>
+    <h5>java</h5>
+    <li><a href="https://www.oracle.com/java/index.html" data-lbl="java:learn-about-java">learn about java</a></li>
+    <li><a href="http://java.com/download" data-lbl="java:download-java-for-consumers" target="_blank">download java for consumers</a></li>
+    <li><a href="/technetwork/java/javase/downloads/index.html" data-lbl="java:download-java-for-developers">download java for developers</a></li>
+    <li><a href="/technetwork/java/index.html" data-lbl="java:java-resources-for-developers">java resources for developers</a></li>
+    <li><a href="https://cloud.oracle.com/java" data-lbl="java:java-cloud-service" target="_blank">java cloud service</a></li>
+    <li><a href="/technetwork/java/javamagazine/index.html" data-lbl="java:java-magazine"><em>java magazine</em></a></li>
+</ul>
+</div>
+<div class="u06v1w2">
+<ul>
+    <h5>customers and events</h5>
+    <li><a href="/us/corporate/customers/index.html" data-lbl="customers-and-events:explore-and-read-customer-stories">explore and read customer stories</a></li>
+    <li><a href="http://events.oracle.com/search/search?group=events&amp;keyword=" data-lbl="customers-and-events:all-oracle-events" target="_blank">all oracle events</a></li>
+    <li><a href="http://www.oracle.com/openworld/index.html" data-lbl="customers-and-events:oracle-openworld" target="_blank">oracle openworld</a></li>
+    <li><a href="http://www.oracle.com/javaone/index.html" data-lbl="customers-and-events:javaone" target="_blank">javaone</a></li>
+</ul>
+</div>
+<div class="u06v1w2">
+<ul>
+    <h5>communities</h5>
+    <li><a href="/us/corporate/blogs/index.html" data-lbl="communities:blogs">blogs</a></li>
+    <li><a href="https://community.oracle.com/welcome" data-lbl="communities:discussion-forums" target="_blank">discussion forums</a></li>
+    <li><a href="https://wikis.oracle.com" data-lbl="communities:wikis" target="_blank">wikis</a></li>
+    <li><a href="/technetwork/community/oracle-ace/index.html" data-lbl="communities:oracle-aces">oracle aces</a></li>
+    <li><a href="/us/corporate/customers/user-groups/index.html" data-lbl="communities:user-groups">user groups</a></li>
+    <li><a href="/us/social-media/twitter/index.html" data-lbl="communities:social-media-channels">social media channels</a></li>
+</ul>
+</div>
+<div class="u06v1w2">
+<ul>
+    <h5>services and store</h5>
+    <li><a href="/us/support/software/premier/my-oracle-support-068523.html" data-lbl="services-and-store:log-in-to-my-oracle-support">log in to my oracle support</a></li>
+    <li><a href="http://education.oracle.com/" data-lbl="services-and-store:training-and-certification" target="_blank">training and certification</a></li>
+    <li><a href="/partners/en/join-now/index.html" data-lbl="services-and-store:become-a-partner" target="_blank">become a partner</a></li>
+    <li><a href="https://solutions.oracle.com/scwar/scr/index.html" data-lbl="services-and-store:find-a-partner-solution">find a partner solution</a></li>
+    <li><a href="https://shop.oracle.com/" data-lbl="services-and-store:purchase-from-the-oracle-store" target="_blank">purchase from the oracle store</a></li>
+    <li>
+    <div class="u06callout">
+    <h5>contact and chat</h5>
+    <strong>phone: +1.800.633.0738 </strong><br />
+    <a href="/us/corporate/contact/global-070511.html" data-lbl="contact-and-chat:global-contacts">global contacts</a><br />
+    <a href="/us/support/contact/index.html" data-lbl="contact-and-chat:oracle-support" target="">oracle support</a><br />
+    <a href="/partners/en/most-popular-resources/partner-business-center-1954023.html" data-lbl="contact-and-chat:partner-support">partner support</a><br />
+    <!-- <strong>e-mail:</strong> <a data-lbl="contact-and-chat:email" href="mailto:help@oracle.com">help@oracle.com</a></div> --></div>
+    </li>
+</ul>
+</div>
+</div>
+<div class="u06v1z2">&nbsp;</div>
+</div>
+<!-- /u06v1 --><!-- u06v0 -->
+<div data-trackas="footer" id="u06"><hr />
+<h3><a href="/us/corporate/index.html" data-lbl="hardware and software engineered to work together">hardware and software, engineered to work together</a></h3>
+<ul class="u06-links">
+    <li><a href="/us/syndication/subscribe/index.html" data-lbl="subscribe">subscribe</a></li>
+    <li><a href="/us/corporate/careers/index.html" data-lbl="careers">careers</a></li>
+    <li><a href="/us/corporate/contact/index.html" data-lbl="contact us">contact us</a></li>
+    <li><a href="/us/sitemaps/index.html" data-lbl="site maps">site maps</a></li>
+    <li><a href="/us/legal/privacy/overview/index.html" data-lbl="legal notices">legal notices</a></li>
+    <li><a href="/us/legal/terms/index.html" data-lbl="terms of use">terms of use</a></li>
+    <li><a href="/us/legal/privacy/overview/index.html" data-lbl="privacy rights">privacy</a></li>
+    <li>
+    <div id="teconsent"></div>
+    </li>
+    <li class="u06-mobile"><a href="/us/corporate/mobile-application/index.html" data-lbl="oracle mobile">oracle mobile</a></li>
+</ul>
+<ul class="scl-icons">
+    <li class="scl-facebook"><a href="/us/social-media/facebook/index.html" data-lbl="facebook" title="oracle on facebook">facebook</a></li>
+    <li class="scl-linkedin"><a href="/us/social-media/linkedin/index.html" data-lbl="linkedin" title="oracle on linkedin">linkedin</a></li>
+    <li class="scl-twitter"><a href="/us/social-media/twitter/index.html" data-lbl="twitter" title="follow oracle on twitter">twitter</a></li>
+    <li class="scl-googleplus"><a href="https://plus.google.com/u/0/115607918987921226255" data-lbl="google plus" target="_blank" title="follow oracle on google+">google+</a></li>
+    <li class="scl-youtube"><a href="http://www.youtube.com/oracle/" data-lbl="youtube" target="_blank" title="watch oracle on youtube">youtube</a></li>
+    <li class="scl-feed"><a href="/us/syndication/feeds/index.html" data-lbl="oracle rss feed" title="oracle rss feeds">oracle rss feed</a></li>
+</ul>
+</div>
+<!-- /u06v0 -->
+ 
+			<!-- ss_end_snippet(fragment63,ocomfooter)--> 
+
+<!--ss_begin_snippet(fragment59,1)-->
+				<!-- start sitecatalyst code -->
+<script language="javascript" src="http://www.oracleimg.com/us/assets/metrics/ora_ocom.js"></script>
+<!-- end sitecatalyst code --> 
+
+			<!--ss_end_snippet(fragment59,1)-->
+
+        </div>
+
+          <!--printer view condition ends -->
+
+        <div id="light" class="sitefinder_content">
+          <!--spacer-->
+        </div>
+
+        <div id="fade" class="lightbox_overlay">
+          <!--spacer-->
+        </div>
+      </div>
+    </div>
+</body>
+</html>

@@ -52,16 +52,18 @@ public class Scraper {
 		Companies.add(Cisco);
 		Company Siemens = new Company("Siemens", "class", "left-content", "http://www.siemens.co.uk/en/news_press/press_releases/", "^.*\\/news_press\\/index\\/news_archive\\/[0-­9]{4}\\/.*$", "http://www.siemens.co.uk/");
 		Companies.add(Siemens);
-		Company EMC = new Company("EMC", "class", "news-wrapper", "http://uk.emc.com/about/news/index.htm", "^.*\\/news\\/press\\/[0-­9]{4}\\/.*$", "http://uk.emc.com");
+		Company EMC = new Company("EMC", "class", "title", "http://uk.emc.com/about/news/index.htm", "^.*\\/news\\/press\\/[0-­9]{4}\\/.*$", "http://uk.emc.com");
 		Companies.add(EMC);
 		
 		//printUrlsFromSelected(Dell);
 		//printSelectedByClass(Google);
 		//printUrlsToFile(EMC);
 		//printCertainUrls(HP);
-		for (Company x : Companies) {
-			x.showUrls();
-		}
+		//
+		
+		//Toshiba.readThenPrintLinks("", "Linkscrape");
+		//EMC.saveLinks(EMC.getBaseURL(), "links1");
+		Apple.readThenPrint("", "PRScrape");
 		;
 		
 	}
