@@ -55,7 +55,6 @@ public class Scraper {
 		Company EMC = new Company("EMC", "class", "title", "http://uk.emc.com/about/news/index.htm", "^.*\\/news\\/press\\/[0-­9]{4}\\/.*$", "http://uk.emc.com");
 		Companies.add(EMC);
 		
-		//printUrlsFromSelected(Dell);
 		//printSelectedByClass(Google);
 		//printUrlsToFile(EMC);
 		//printCertainUrls(HP);
@@ -63,9 +62,17 @@ public class Scraper {
 		
 		//Toshiba.readThenPrintLinks("", "Linkscrape");
 		//EMC.saveLinks(EMC.getBaseURL(), "links1");
-		Apple.readThenPrint("", "PRScrape");
-		;
+		//Apple.readThenPrint("", "PRScrape");
 		
+		
+	}
+
+	public static ArrayList<Company> getCompanies() {
+		return Companies;
+	}
+
+	public static void setCompanies(ArrayList<Company> companies) {
+		Companies = companies;
 	}
 }
 
