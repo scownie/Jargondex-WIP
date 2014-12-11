@@ -5,6 +5,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Map.Entry;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -49,7 +50,7 @@ public class Company {
 			e1.printStackTrace();
 		}
 	}
-	
+
 	/**
 	 * Prints only the links that match the regex pattern defined in each Company object, prepends the domain where necessary
 	 * @param name of Company object from which to extract links
@@ -81,7 +82,7 @@ public class Company {
 			e1.printStackTrace();
 		}
 	}
-	
+
 	/**
 	 * Prints only the links that match the regex pattern defined in each Company object
 	 * @param name of Company object from which to extract links
@@ -106,7 +107,7 @@ public class Company {
 		}
 
 	}
-	
+
 	/**
 	 * Prints all links from the baseURL of the named company 
 	 * @param companyName - name of Company object from which to extract links
@@ -126,7 +127,7 @@ public class Company {
 			e1.printStackTrace();
 		}
 	}
-	
+
 	/**
 	 * Prints anything contained in "p" tags text from the baseURL of the named company 
 	 * @param companyName - name of Company object from which to extract text
@@ -146,35 +147,35 @@ public class Company {
 			e1.printStackTrace();
 		}
 	}
-	
+
 	/**
 	 * Reads URLs from saved .txt file for each Company, sends each line to saveContent 
 	 * @param readPathAppend - 
 	 * @param savePathAppend
 	 */
 	void readThenPrint(String readPathAppend) {
-	//	StringBuffer stringBuffer = null;	
+		//	StringBuffer stringBuffer = null;	
 		String name = this.getCompanyName();
 		int counter = 0;
 		try {
-				File file = new File("/Users/Steve/Workspace/ScraperTest/Filewriter/" + name + "/" + name  + readPathAppend + ".txt");
-				FileReader fileReader = new FileReader(file);
-				BufferedReader bufferedReader = new BufferedReader(fileReader);
+			File file = new File("/Users/Steve/Workspace/ScraperTest/Filewriter/" + name + "/" + name  + readPathAppend + ".txt");
+			FileReader fileReader = new FileReader(file);
+			BufferedReader bufferedReader = new BufferedReader(fileReader);
 			//	stringBuffer = new StringBuffer();
-				String line;
-				while ((line = bufferedReader.readLine()) != null) {
-					this.saveContent(line.toString(), counter);
-					//stringBuffer.append(line);
-					//stringBuffer.append("\n");
-					counter++;
-				}
-				fileReader.close();
-			} catch (IOException e) {
-				e.printStackTrace();
+			String line;
+			while ((line = bufferedReader.readLine()) != null) {
+				this.saveContent(line.toString(), counter);
+				//stringBuffer.append(line);
+				//stringBuffer.append("\n");
+				counter++;
 			}
+			fileReader.close();
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
-	
-	 void saveContent(String currentURL, int counter) throws IOException {
+	}
+
+	void saveContent(String currentURL, int counter) throws IOException {
 		Document doc;
 		String name = this.getCompanyName();
 		String css = this.getCssClassOrID();
@@ -195,14 +196,14 @@ public class Company {
 			else { Element contentMatchingID = doc.getElementById(this.getCssSelector());
 			bw.write(contentMatchingID.text());
 			}
-		bw.close();
-		fw.close();
-		System.out.println("Printed to" + " " + file.getAbsoluteFile() + ", nice work m8!");
+			bw.close();
+			fw.close();
+			System.out.println("Printed to" + " " + file.getAbsoluteFile() + ", nice work m8!");
 		} catch (IOException e1) {
 			e1.printStackTrace();
 		}
 	}
-	
+
 	/**
 	 * Reads URLs from saved .txt file for each Company, sends each line to saveContent 
 	 * @param readPathAppend - 
@@ -212,23 +213,23 @@ public class Company {
 		StringBuffer stringBuffer = null;	
 		String name = this.getCompanyName();
 		try {
-				File file = new File("/Users/Steve/Workspace/ScraperTest/Filewriter/" + name + "/" + name  + readPathAppend + ".txt");
-				FileReader fileReader = new FileReader(file);
-				BufferedReader bufferedReader = new BufferedReader(fileReader);
-				stringBuffer = new StringBuffer();
-				String line;
-				while ((line = bufferedReader.readLine()) != null) {
-					this.saveLinks(line.toString(), savePathAppend);
-					stringBuffer.append(line);
-					stringBuffer.append("\n");
-				}
-				fileReader.close();
-			} catch (IOException e) {
-				e.printStackTrace();
+			File file = new File("/Users/Steve/Workspace/ScraperTest/Filewriter/" + name + "/" + name  + readPathAppend + ".txt");
+			FileReader fileReader = new FileReader(file);
+			BufferedReader bufferedReader = new BufferedReader(fileReader);
+			stringBuffer = new StringBuffer();
+			String line;
+			while ((line = bufferedReader.readLine()) != null) {
+				this.saveLinks(line.toString(), savePathAppend);
+				stringBuffer.append(line);
+				stringBuffer.append("\n");
 			}
+			fileReader.close();
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
-	
-	 void saveLinks(String currentURL, String savePathAppend) throws IOException {
+	}
+
+	void saveLinks(String currentURL, String savePathAppend) throws IOException {
 		Document doc;
 		String name = this.getCompanyName();
 		File file = new File("/Users/Steve/Workspace/ScraperTest/Filewriter/" + name + "/" + name + savePathAppend + ".txt");
@@ -245,15 +246,15 @@ public class Company {
 					bw.write(this.getDomain() + link.absUrl("href") + "\n");
 				}
 			}
-		bw.close();
-		fw.close();
-		System.out.println("Printed to" + " " + file.getAbsoluteFile() + ", nice work m8!");
+			bw.close();
+			fw.close();
+			System.out.println("Printed to" + " " + file.getAbsoluteFile() + ", nice work m8!");
 		} catch (IOException e1) {
 			e1.printStackTrace();
 		}
 	}
-	
-	
+
+
 	public String getDomain() {
 		return domain;
 	}
@@ -300,11 +301,11 @@ public class Company {
 	public void setBaseURL(String baseURL) {
 		this.baseURL = baseURL;
 	}
-	
 
-	
 
-	public static void main(String[] args) {
+
+
+	public static void main(String[] args) throws IOException {
 		Company Samsung = new Company("Samsung", "class", "news_wrap", "http://www.samsung.com/uk/news/local/", "^.*\\/news\\/local\\/.*$", "http://www.samsung.com");
 		Companies.add(Samsung);
 		Company Apple = new Company("Apple", "class", "content", "https://www.apple.com/uk/pr/library/", "^.*\\/pr\\/library\\/[0-­9]{4}\\/.*", "https://www.apple.com");
@@ -338,28 +339,36 @@ public class Company {
 		//Companies.add(SAP);
 		Company Symantec = new Company("Symantec", "class", "bckPadMedium", "http://www.symantec.com/en/uk/about/news/release/", "^.*\\/news\\/release\\/article.*$", "http://www.symantec.com");
 		Companies.add(Symantec);
-		Company VMWare = new Company("VMWare", "class", "mw_release", "http://www.vmware.com/company/news/releases/2014.html", "^.*\\/releases\\/vmw-newsfeed\\/.*$", "http://www.vmware.com");
-		Companies.add(VMWare);
+		//Company VMWare = new Company("VMWare", "class", "mw_release", "http://www.vmware.com/company/news/releases/2014.html", "^.*\\/releases\\/vmw-newsfeed\\/.*$", "http://www.vmware.com");
+		//Companies.add(VMWare);
 		Company CATechnologies = new Company("CATechnologies", "class", "container", "http://www.ca.com/sg/news/press-releases.aspx?prodCat=-1&date=All", "^.*\\/news\\/press-releases\\/.*$", "http://www.ca.com");
 		Companies.add(CATechnologies);
 		//Company Intuit = new Company("Intuit", "id", "pressRelease", "http://about.intuit.com/about_intuit/press_room/");
 		//Companies.add(Intuit);
-		Company Salesforce = new Company("Salesforce", "class", "category", "http://www.salesforce.com/uk/company/news-press/press-releases/#cursor=0&sort=desc", "^.*\\/news-press\\/press-releases\\/.*$", "http://www.salesforce.com");
-		Companies.add(Salesforce);
+		//Company Salesforce = new Company("Salesforce", "class", "category", "http://www.salesforce.com/uk/company/news-press/press-releases/#cursor=0&sort=desc", "^.*\\/news-press\\/press-releases\\/.*$", "http://www.salesforce.com");
+		//Companies.add(Salesforce);
 		Company Cisco = new Company("Cisco", "id", "press_release", "http://newsroom.cisco.com/all-news/-/articles/archive?_AllContent_WAR_AllContentportlet_INSTANCE_S8dk_windowState=maximized", "^.*\\/press-release-content\\?type\\=webcontent\\&articleId\\=.*$", "");
 		Companies.add(Cisco);
 		Company Siemens = new Company("Siemens", "class", "left-content", "http://www.siemens.co.uk/en/news_press/press_releases/", "^.*\\/news_press\\/index\\/news_archive\\/[0-­9]{4}\\/.*$", "http://www.siemens.co.uk/");
 		Companies.add(Siemens);
-		Company EMC = new Company("EMC", "class", "title", "http://uk.emc.com/about/news/index.htm", "^.*\\/news\\/press\\/[0-­9]{4}\\/.*$", "http://uk.emc.com");
-		Companies.add(EMC);
-		
-		
+		//Company EMC = new Company("EMC", "class", "title", "http://uk.emc.com/about/news/index.htm", "^.*\\/news\\/press\\/[0-­9]{4}\\/.*$", "http://uk.emc.com");
+		//Companies.add(EMC);
+
 		for (Company x : Companies) {
 			Counter.checkSavedPRs(x.getCompanyName());
 		}
-		for (String s : Counter.totals) {
-			System.out.println(s);
+		BufferedWriter newcsv = new BufferedWriter(new FileWriter("NewTable.csv"));
+		for (Entry<String, ArrayList<String>> entry : Counter.mapTest.entrySet()) {
+			String pressreleasetitle = entry.getKey();
+			String jargoncount = "";
+			for (String count : entry.getValue()) {
+				jargoncount += count;
+			}
+			System.out.println(pressreleasetitle + " , " + jargoncount);
+			newcsv.write(pressreleasetitle + " , " + " , " + " " + "\n" + jargoncount + "\n");
 		}
+		newcsv.close();
+
 		//System.out.println("The worst offender is...\"" + Counter.runningTotalName + "\" with " + Counter.runningTotal + " jargon words");
 	}
 
